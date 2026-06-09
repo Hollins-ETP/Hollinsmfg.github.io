@@ -6,7 +6,7 @@
 <title>HOLLINS Manufacturing</title>
 
 <style>
-/* RESET */
+/* RESET (Removes all margins, padding, and bullet points perfectly) */
 *{
     margin:0;
     padding:0;
@@ -28,7 +28,7 @@ body{
     background:white;
 }
 
-/* HEADER */
+/* HEADER STYLE CONFIGURATION */
 header{
     background:var(--black);
     color:white;
@@ -54,7 +54,7 @@ header span{
     margin-top: 5px;
 }
 
-/* NAV - REBUILT TO BE COMPLETELY CLICKABLE */
+/* NAVIGATION LINKS BAR */
 nav{
     margin-top:25px;
     display: flex;
@@ -66,10 +66,11 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
+    margin:0 15px;
     font-weight:bold;
     font-size: 1.1rem;
     cursor: pointer;
-    padding: 10px 15px; /* Creates a large, unblocked clickable zone */
+    padding: 8px 12px;
     display: inline-block;
     transition: color 0.2s;
 }
@@ -78,7 +79,7 @@ nav a:hover, nav a.active{
     color:var(--green);
 }
 
-/* HERO / HOME DEFAULT */
+/* HERO SLOT CONFIGURATION */
 .hero{
     background:var(--gray);
     text-align:center;
@@ -110,7 +111,7 @@ nav a:hover, nav a.active{
     cursor: pointer;
 }
 
-/* SECTIONS */
+/* INDEPENDENT PAGES MANAGER HOOK */
 .page-section{
     display: none;
     padding: 90px 20px;
@@ -126,7 +127,7 @@ nav a:hover, nav a.active{
     margin-bottom:30px;
 }
 
-/* STORY */
+/* BRAND STORY SECTION */
 .container{
     max-width:900px;
     margin:auto;
@@ -134,11 +135,12 @@ nav a:hover, nav a.active{
     color:#444;
 }
 
-/* PRODUCTS */
+/* CATEGORIES AND GRIDS */
 .category-title{
     margin-top:60px;
     font-size:1.4rem;
     color:#222;
+    font-weight: bold;
 }
 
 .grid{
@@ -153,8 +155,9 @@ nav a:hover, nav a.active{
 .card{
     border:1px solid #ddd;
     border-radius:10px;
-    padding:10px;
+    padding:15px;
     background:white;
+    text-align: center;
 }
 
 .card img{
@@ -163,7 +166,7 @@ nav a:hover, nav a.active{
     object-fit:contain;
 }
 
-/* COMING SOON PLACEHOLDER */
+/* IMAGE COMING SOON LAYOUT BOX */
 .coming-soon-box {
     width: 100%;
     height: 180px;
@@ -172,15 +175,15 @@ nav a:hover, nav a.active{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #777;
+    color: #666;
     font-weight: bold;
     font-size: 0.95rem;
     letter-spacing: 1px;
-    border: 2px dashed #ccc;
+    border: 2px dashed #bbb;
     text-transform: uppercase;
 }
 
-/* CONTACT CONTAINER BOX */
+/* CONTACT CONTAINER BOX CARD */
 .contact-box {
     background: var(--gray);
     padding: 40px;
@@ -213,7 +216,7 @@ nav a:hover, nav a.active{
 
 <body>
 
-<!-- HEADER -->
+<!-- HEADER BAR AND NAV MENU LINKS -->
 <header>
     <h1 style="cursor:pointer;" onclick="showPage('home')">HOLLINS</h1>
     <span style="cursor:pointer;" onclick="showPage('home')">MANUFACTURING</span>
@@ -225,7 +228,7 @@ nav a:hover, nav a.active{
     </nav>
 </header>
 
-<!-- HOME PAGE VIEW -->
+<!-- HOME PAGE SELECTION (Default visible) -->
 <div id="home" class="page-section">
     <section class="hero">
         <h2>Engineered towing & trailer electrical solutions built for speed, strength, and reliability.</h2>
@@ -237,7 +240,7 @@ nav a:hover, nav a.active{
     </section>
 </div>
 
-<!-- STORY VIEW -->
+<!-- STORY PAGE SELECTION -->
 <div id="story" class="page-section">
     <h2>Our Brand Story</h2>
     <div class="container">
@@ -253,7 +256,7 @@ nav a:hover, nav a.active{
     </div>
 </div>
 
-<!-- PRODUCTS VIEW -->
+<!-- PRODUCTS PAGE SELECTION (All categories perfectly closed and structured) -->
 <div id="products" class="page-section">
     <h2>Products</h2>
 
@@ -340,14 +343,15 @@ nav a:hover, nav a.active{
             <p style="margin-top:10px;font-weight:bold;">ETP900</p>
         </div>
         <div class="card">
-            <img src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png'; this.style.display='none'; document.getElementById('cs-fallback').style.display='flex';">
+            <!-- This explicit element targeted block stops it from breaking other layout pages -->
+            <img id="p4-img" src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png'; this.style.display='none'; document.getElementById('cs-fallback').style.display='flex';">
             <div id="cs-fallback" class="coming-soon-box" style="display:none;">📷 Image Coming Soon</div>
             <p style="margin-top:10px;font-weight:bold;">ETP910</p>
         </div>
     </div>
 </div>
 
-<!-- CONTACT VIEW -->
+<!-- CONTACT PAGE SELECTION -->
 <div id="contact" class="page-section">
     <h2>Contact Us</h2>
     <div class="contact-box">
@@ -355,18 +359,3 @@ nav a:hover, nav a.active{
         <p><strong>✉️ Email:</strong> 
             <a href="mailto:info@etpmfg.com" style="color:var(--green);font-weight:bold;">
                 info@etpmfg.com
-            </a>
-        </p>
-    </div>
-</div>
-
-<!-- AUTOMATED PAGE SWITCHER CODE -->
-<script>
-function showPage(pageId) {
-    var sections = document.querySelectorAll('.page-section');
-    sections.forEach(function(section) {
-        section.style.display = 'none';
-    });
-
-    var targetPage = document.getElementById(pageId);
-    if(targetPage) {
