@@ -3,59 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOLLINS Manufacturing | Strip & Clip</title>
+    <title>Premium Towing Electrical Solutions | Strip & Clip</title>
     <style>
         :root {
-            --hollins-green: #32ab45;  /* Your exact brand Leaf Green */
-            --strip-orange: #F16E22;   /* Your exact Strip 'N Clip Orange */
-            --dark-bg: #121212;        /* Premium dark background matching your logo backdrop */
-            --light-gray: #f4f6f5;     
-            --white: #ffffff;   
+            --primary: #0056b3; 
+            --dark: #222222;    
+            --light: #f8f9fa;   
+            --accent: #ffc107;  
         }
-        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #222; line-height: 1.6; background-color: var(--white); scroll-behavior: smooth; }
-        
-        /* Premium Header built in dark slate to highlight your crisp logo colors */
-        header { background: var(--dark-bg); color: var(--white); padding: 3.5rem 2rem 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
-        
-        /* Clean logo text presentation */
-        .logo-branding-group { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        .hollins-main-title { font-size: 5rem; font-weight: 900; color: var(--hollins-green); letter-spacing: 2px; line-height: 1; text-transform: uppercase; }
-        
-        /* Crisp white subtitle text centered below the green title */
-        .logo-sub-text { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 6px; color: var(--white); font-weight: 700; margin-top: 0.8rem; -webkit-font-smoothing: antialiased; }
-
-        /* Top Bar Contact Info Setup */
-        .top-contact-info { margin-top: 1.2rem; display: flex; gap: 2rem; justify-content: center; font-size: 1.15rem; font-weight: 500; color: #e5e7eb; }
-        .top-contact-info a { color: var(--hollins-green); text-decoration: none; font-weight: bold; }
-        .top-contact-info a:hover { text-decoration: underline; }
-
-        header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 2.2rem; }
-        header nav a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.1rem; opacity: 0.85; transition: opacity 0.2s; }
-        header nav a:hover { opacity: 1; color: var(--hollins-green); }
-
-        /* Hero Setup */
-        .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('hero-bg.jpg') center/cover var(--dark-bg); color: var(--white); padding: 6rem 2rem; text-align: center; }
+        body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('hero-bg.jpg') center/cover #222; color: white; padding: 5rem 2rem; text-align: center; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        
-        /* High-visibility orange limited exclusively to the Strip 'N Clip technology badge */
-        .badge { background: var(--strip-orange); color: var(--white); padding: 0.4rem 1rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        
-        /* Main action items and button states using clean Hollins Green */
-        .btn { display: inline-block; background: var(--hollins-green); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: 2px solid var(--hollins-green); cursor: pointer; transition: transform 0.2s, background-color 0.2s; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .btn:hover { transform: scale(1.03); background-color: #2a913a; border-color: #2a913a; }
-        .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
-        .btn-secondary:hover { background: var(--white); color: var(--dark-bg); }
-        
-        .section { padding: 5rem 2rem; }
-        .bg-light { background: var(--light-gray); }
+        .badge { background: var(--accent); color: var(--dark); padding: 0.25rem 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; border: none; cursor: pointer; }
+        .section { padding: 4rem 2rem; }
+        .bg-light { background: var(--light); }
         .text-center { text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: var(--white); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e0e0e0; }
-        
-        .product-img { width: 100%; height: 210px; object-fit: contain; border-radius: 4px; margin-bottom: 1rem; }
-        .fallback-box { width: 100%; height: 210px; background: #ddd; border-radius: 4px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold; }
-        
-        .contact-container { max-width: 600px; margin: 0 auto; }
+        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
+        .product-img { width: 100%; height: 200px; background: #ddd; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold; }
+        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto; }
         .form-group { margin-bottom: 1.2rem; text-align: left; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
         .form-group input, .form-group textarea { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
@@ -63,120 +31,112 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section with Contact Details Inputted -->
+    <!-- Header Navigation -->
     <header>
-        <div class="logo-branding-group">
-            <div class="hollins-main-title">HOLLINS</div>
-            <div class="logo-sub-text">Manufacturing</div>
-            
-            <!-- Your phone number and email are locked directly inside the navigation banner -->
-            <div class="top-contact-info">
-                <span>📞 Phone: <strong>888-238-5332</strong></span>
-                <span>✉️ Email: <a href="mailto:info@etpmfg.com">info@etpmfg.com</a></span>
-            </div>
-        </div>
-        
+        <div style="font-weight: bold; font-size: 1.3rem;">INSERT_YOUR_COMPANY_NAME_HERE</div>
         <nav>
-            <a href="#about">Our Story</a>
-            <a href="#products">Products</a>
-            
+            <a href="#about" style="color: white; text-decoration: none; margin-left: 1.5rem;">Our Story</a>
+            <a href="#products" style="color: white; text-decoration: none; margin-left: 1.5rem;">Products</a>
+            <a href="#contact" style="color: white; text-decoration: none; margin-left: 1.5rem;">Contact Us</a>
         </nav>
     </header>
 
-    <!-- Hero Value Section -->
+    <!-- Hero Section -->
     <section class="hero">
-        <span class="badge">Featuring Strip 'N Clip™ Technology</span>
-        <h1 style="margin-top: 1.5rem;">Towing Electrical Installed in a Fraction of the Time</h1>
-        <p style="max-width: 700px; margin: 1rem auto 2rem auto; font-size: 1.2rem; color: #e0e0e0;">
+        <span class="badge">Featuring Strip & Clip™ Tech</span>
+        <h1>Towing Electrical Installed in a Fraction of the Time</h1>
+        <p style="max-width: 700px; margin: 1rem auto; font-size: 1.2rem;">
             Revolutionizing towing connectivity for DIYers and professional fleet installers. Built with our signature quick-connect system—completely eliminating wire crimping and butt-connecting.
         </p>
-        <a href="#products" class="btn">Browse Products</a>
-        <a href="Hollins ETP Products 03.10.26.pdf" target="_blank" class="btn btn-secondary">📋 Download Product Guide (PDF)</a>
+        <a href="#products" class="btn">Browse Product Lineup</a>
     </section>
 
-    <!-- Brand Story Section -->
+    <!-- Our Story Section -->
     <section id="about" class="section">
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 2.2rem; color: #222; margin-bottom: 0.5rem; text-transform: uppercase;">OUR BRAND STORY</h2>
-            <h3 style="font-size: 1.4rem; color: var(--hollins-green); font-weight: 600; margin-bottom: 1.5rem;">Making it Easier to Connect with What Drives You.</h3>
-            <p style="font-size: 1.15rem; color: #444; line-height: 1.8; margin-bottom: 1rem;">
-                For over 20 years, we installed electrical systems, catering to diverse towing and automotive applications. Experiencing challenges again and again, we knew there had to be a better way. With the installer in mind, we've fused ingenuity, innovation, and good old-fashioned common sense into every product we offer.
-            </p>
-            <p style="font-size: 1.15rem; color: #444; line-height: 1.8;">
-                Every Hollins product has been created for you to complete the job faster, with fewer steps, and without the fuss and frustration. Our patented solutions are pulling the industry in exciting new directions - empowering both do-it-yourselfers and seasoned professionals alike to connect with unparalleled success.
+            <h2>Our Story</h2>
+            <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
+                INSERT_YOUR_COMPANY_STORY_HERE (Example: We started this company to solve a major headache in the towing industry. Traditional wiring takes too long and fails too often. That is why we invented our patented Strip & Clip technology...)
             </p>
         </div>
     </section>
 
-    <!-- Product Grid Gallery Section -->
+    <!-- Product Showcase Gallery -->
     <section id="products" class="section bg-light">
         <div class="text-center">
             <h2>Our Premium Towing Solutions</h2>
-            <p style="color: #666;">Engineered tough for maximum connection strength and rapid setup times.</p>
+            <p>Engineered tough for maximum connection strength and rapid setup times.</p>
         </div>
         <div class="grid">
             <div class="card">
-                <img class="product-img" src="connectors.png" alt="Electrical Connectors" onerror="this.onerror=null; this.src='connectors.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb1').style.display='flex';}">
-                <div class="fallback-box" id="fb1">[ Photo: Electrical Connectors ]</div>
+                <img class="product-img" src="connectors.jpg" alt="Electrical Connectors" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="product-img" style="display:none;">[ Photo: Electrical Connectors ]</div>
                 <h3>Electrical Connectors</h3>
                 <p>Equipped with seamless quick-connect mechanisms.</p>
             </div>
             <div class="card">
-                <img class="product-img" src="plugs.png" alt="Trailer & Vehicle Plugs" onerror="this.onerror=null; this.src='plugs.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb2').style.display='flex';}">
-                <div class="fallback-box" id="fb2">[ Photo: Trailer Plugs ]</div>
+                <img class="product-img" src="plugs.jpg" alt="Trailer & Vehicle Plugs" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="product-img" style="display:none;">[ Photo: Trailer Plugs ]</div>
                 <h3>Trailer & Vehicle Plugs</h3>
                 <p>Heavy-duty weather-sealed towing plugs.</p>
             </div>
             <div class="card">
-                <img class="product-img" src="junction-box.png" alt="Trailer Junction Box" onerror="this.onerror=null; this.src='junction-box.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb3').style.display='flex';}">
-                <div class="fallback-box" id="fb3">[ Photo: Junction Box ]</div>
+                <img class="product-img" src="junction-box.jpg" alt="Trailer Junction Box" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="product-img" style="display:none;">[ Photo: Junction Box ]</div>
                 <h3>Trailer Junction Boxes</h3>
                 <p>Organized, secure distribution for trailer wiring.</p>
             </div>
-            <div class="fallback-box" id="fb4">
-    [ Photo: Fuse Holders ]
-</div>
-
-<h3>Inline Fuse Holders</h3>
-<p>Reliable protection with simplified installation.</p>
-    <div class="text-center">
-        <h2 style="font-size:2.2rem; color:#222;">
-            CONTACT US
-        </h2>
-
-        <p style="color:#666; margin-bottom:2rem;">
-            Questions about products, distribution, or technical support?
-        </p>
-    </div>
-
-    <form>
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" placeholder="Your Name">
+            <div class="card">
+                <img class="product-img" src="fuse-holders.jpg" alt="Inline Fuse Holders" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="product-img" style="display:none;">[ Photo: Fuse Holders ]</div>
+                <h3>Inline Fuse Holders</h3>
+                <p>Crucial circuit protection without tricky splice tools.</p>
+            </div>
+            <div class="card">
+                <img class="product-img" src="brackets.jpg" alt="Trailer Hitch Brackets" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="product-img" style="display:none;">[ Photo: Hitch Brackets ]</div>
+                <h3>Trailer Hitch Brackets</h3>
+                <p>Rugged structural mounting brackets built to endure.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="Your Email">
+    <!-- Contact Us Section -->
+    <section id="contact" class="section">
+        <div class="text-center" style="margin-bottom: 3rem;">
+            <h2>Contact Us</h2>
+            <p>Get in touch for bulk orders, fleet pricing, or product inquiries.</p>
         </div>
-
-        <div class="form-group">
-            <label>Message</label>
-            <textarea rows="6" placeholder="Tell us how we can help"></textarea>
+        <div class="contact-container">
+            <div>
+                <h3>Get in Touch</h3>
+                <p><strong>📍 Address:</strong> INSERT_PHYSICAL_ADDRESS_HERE</p>
+                <p><strong>📞 Phone:</strong> INSERT_PHONE_NUMBER_HERE</p>
+                <p><strong>✉️ Email:</strong> INSERT_EMAIL_ADDRESS_HERE</p>
+            </div>
+            <div>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width:100%;">Send Message</button>
+                </form>
+            </div>
         </div>
+    </section>
 
-        <button class="btn" type="submit">
-            Send Message
-        </button>
-    </form>
+    <footer class="bg-light text-center" style="padding: 2rem; font-size: 0.9rem; border-top: 1px solid #eee; color: #777;">
+        <p>&copy; 2026 INSERT_YOUR_COMPANY_NAME_HERE. All rights reserved.</p>
+    </footer>
 
-    <div style="margin-top:2rem; text-align:center;">
-        <p><strong>Phone:</strong> 888-238-5332</p>
-        <p>
-            <strong>Email:</strong>
-            <a href="mailto:info@etpmfg.com">
-                info@etpmfg.com
-            </a>
-        </p>
-    </div>
-
+</body>
+</html>
