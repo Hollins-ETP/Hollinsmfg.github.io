@@ -14,11 +14,6 @@
     box-sizing:border-box;
 }
 
-*::before,
-*::after{
-    content:none !important;
-}
-
 ul, li{
     list-style:none;
 }
@@ -47,13 +42,15 @@ h1{
     color:var(--green);
     font-size:3.5rem;
     letter-spacing:4px;
+    font-weight: 900;
 }
 
-span{
+header span{
     display:block;
     font-size:0.9rem;
     letter-spacing:6px;
     opacity:0.7;
+    margin-top: 5px;
 }
 
 /* NAV */
@@ -151,12 +148,33 @@ nav a:hover{
     object-fit:contain;
 }
 
-/* CONTACT */
-.contact-box{
-    background:var(--gray);
-    padding:40px;
-    border-radius:10px;
-    display:inline-block;
+/* CONTACT CONTAINER BOX FIXED */
+.contact-box {
+    background: var(--gray);
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    min-width: 320px;
+    border: 1px solid #ddd;
+}
+
+.contact-box p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-box p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-box a {
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
 }
 
 </style>
@@ -172,7 +190,7 @@ nav a:hover{
     <nav>
         <a href="#story">Our Story</a>
         <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contact Us</a>
     </nav>
 </header>
 
@@ -191,11 +209,11 @@ nav a:hover{
     <h2>Our Brand Story</h2>
 
     <div class="container">
-        <p><strong>Making it Easier to Connect with What Drives You.</strong></p>
+        <p style="margin-bottom: 15px;"><strong>Making it Easier to Connect with What Drives You.</strong></p>
 
-        <p>
+        <p style="margin-bottom: 15px;">
         For over 20 years, we installed electrical systems across towing and automotive industries.
-        We saw the same problem again and again — installs taking too long and failing too often.
+        We saw the same problem again and again - installs taking too long and failing too often.
         </p>
 
         <p>
@@ -205,50 +223,51 @@ nav a:hover{
     </div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- PRODUCTS SECTION -->
 <section id="products" class="section">
 
 <h2>Products</h2>
 
 <div class="category-title">Electrical Connectors</div>
 <div class="grid">
-    <div class="card"><img src="connector%20ETP200.png"><p>ETP200</p></div>
-    <div class="card"><img src="connector%20ETP%20210%20FULL.png"><p>ETP210</p></div>
-    <div class="card"><img src="connector%20ETP%20220-FULL.png"><p>ETP220</p></div>
-    <div class="card"><img src="connector%20ETP230%20FULL.png"><p>ETP230</p></div>
+    <div class="card"><img src="connector%20ETP200.png"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
+    <div class="card"><img src="connector%20ETP%20210%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP210</p></div>
+    <div class="card"><img src="connector%20ETP%20220-FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP220</p></div>
+    <div class="card"><img src="connector%20ETP230%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
 </div>
 
 <div class="category-title">Brackets</div>
 <div class="grid">
-    <div class="card"><img src="brackets1.jpg"><p>Hitch Bracket</p></div>
-    <div class="card"><img src="brackets2.jpg"><p>Mount Bracket</p></div>
+    <div class="card"><img src="brackets1.jpg"><p style="margin-top:10px;font-weight:bold;">Hitch Bracket</p></div>
+    <div class="card"><img src="brackets2.jpg"><p style="margin-top:10px;font-weight:bold;">Mount Bracket</p></div>
 </div>
 
 <div class="category-title">Junction Boxes</div>
 <div class="grid">
-    <div class="card"><img src="junction1.jpg"><p>Junction Box</p></div>
+    <div class="card"><img src="junction1.jpg"><p style="margin-top:10px;font-weight:bold;">Junction Box</p></div>
 </div>
 
 <div class="category-title">Inline Fuse Holders</div>
 <div class="grid">
-    <div class="card"><img src="fuse1.jpg"><p>Fuse Holder</p></div>
+    <div class="grid">
+    <div class="card"><img src="fuse1.jpg"><p style="margin-top:10px;font-weight:bold;">Fuse Holder</p></div>
 </div>
 
 <div class="category-title">Plugs</div>
 <div class="grid">
-    <div class="card"><img src="plug1.jpg"><p>7-Pin Plug</p></div>
+    <div class="card"><img src="plug1.jpg"><p style="margin-top:10px;font-weight:bold;">7-Pin Plug</p></div>
 </div>
 
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT SECTION -->
 <section id="contact" class="section">
-    <h2>Contact</h2>
+    <h2>Contact Us</h2>
 
     <div class="contact-box">
-        <p><strong>Phone:</strong> 888-238-5332</p>
-        <p><strong>Email:</strong> 
-            <a href="mailto:info@etpmfg.com" style="color:#2fb34a;font-weight:bold;">
+        <p><strong>📞 Phone:</strong> 888-238-5332</p>
+        <p><strong>✉️ Email:</strong> 
+            <a href="mailto:info@etpmfg.com" style="color:var(--green);font-weight:bold;">
                 info@etpmfg.com
             </a>
         </p>
