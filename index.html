@@ -300,6 +300,19 @@ nav a:hover, nav a.active{
         </div>
     </div>
 
+    <!-- NEW 2-GRID EXTENSION HARNESSES SECTION -->
+    <div class="category-title">Extension Harnesses</div>
+    <div class="grid">
+        <div class="card">
+            <img src="harness1.jpg" onerror="this.onerror=null; this.src='harness1.png';">
+            <p style="margin-top:10px;font-weight:bold;">ETP700</p>
+        </div>
+        <div class="card">
+            <img src="harness2.jpg" onerror="this.onerror=null; this.src='harness2.png';">
+            <p style="margin-top:10px;font-weight:bold;">ETP710</p>
+        </div>
+    </div>
+
     <div class="category-title">4-Pin Plugs</div>
     <div class="grid">
         <div class="card">
@@ -318,7 +331,6 @@ nav a:hover, nav a.active{
             <img src="plug3.jpg" onerror="this.onerror=null; this.src='plug3.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP900</p>
         </div>
-        <!-- AUTOMATED IMAGE COMING SOON FALLBACK LAYER FOR ETP910 -->
         <div class="card">
             <img src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png'; this.style.display='none'; document.getElementById('cs-fallback').style.display='flex';">
             <div id="cs-fallback" class="coming-soon-box" style="display:none;">📷 Image Coming Soon</div>
@@ -357,14 +369,3 @@ function showPage(pageId) {
     navLinks.forEach(function(link) {
         link.classList.remove('active');
     });
-    var activeLink = document.getElementById('nav-' + pageId);
-    if(activeLink) {
-        activeLink.classList.add('active');
-    }
-    
-    window.scrollTo(0,0);
-}
-</script>
-
-</body>
-</html>
