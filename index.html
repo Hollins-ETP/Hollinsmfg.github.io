@@ -1,142 +1,226 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Towing Electrical Solutions | Strip & Clip</title>
-    <style>
-        :root {
-            --primary: #0056b3; 
-            --dark: #222222;    
-            --light: #f8f9fa;   
-            --accent: #ffc107;  
-        }
-        body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; }
-        header { background: var(--dark); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('hero-bg.jpg') center/cover #222; color: white; padding: 5rem 2rem; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .badge { background: var(--accent); color: var(--dark); padding: 0.25rem 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; border: none; cursor: pointer; }
-        .section { padding: 4rem 2rem; }
-        .bg-light { background: var(--light); }
-        .text-center { text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
-        .product-img { width: 100%; height: 200px; background: #ddd; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold; }
-        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto; }
-        .form-group { margin-bottom: 1.2rem; text-align: left; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOLLINS Manufacturing</title>
+
+<style>
+:root{
+    --green:#2fb34a;
+    --black:#0f0f0f;
+    --white:#fff;
+    --gray:#f4f4f4;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+    scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+    background:var(--black);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    position:sticky;
+    top:0;
+}
+
+h1{
+    margin:0;
+    font-size:3.5rem;
+    letter-spacing:4px;
+}
+
+span{
+    display:block;
+    font-size:0.9rem;
+    letter-spacing:6px;
+    opacity:0.7;
+}
+
+/* NAV */
+nav{
+    margin-top:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:var(--green);
+}
+
+/* HERO */
+.hero{
+    background:var(--gray);
+    text-align:center;
+    padding:80px 20px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--green);
+    color:white;
+    padding:12px 25px;
+    margin-top:20px;
+    border-radius:6px;
+    text-decoration:none;
+}
+
+/* SECTIONS */
+.section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#444;
+}
+
+.green{
+    color:var(--green);
+}
+
+/* PRODUCTS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:40px;
+    max-width:1100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.card{
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:10px;
+    background:white;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:contain;
+}
+
+/* CONTACT */
+.contact-box{
+    background:var(--gray);
+    padding:40px;
+    border-radius:10px;
+    display:inline-block;
+}
+</style>
+
 </head>
+
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div style="font-weight: bold; font-size: 1.3rem;">INSERT_YOUR_COMPANY_NAME_HERE</div>
-        <nav>
-            <a href="#about" style="color: white; text-decoration: none; margin-left: 1.5rem;">Our Story</a>
-            <a href="#products" style="color: white; text-decoration: none; margin-left: 1.5rem;">Products</a>
-            <a href="#contact" style="color: white; text-decoration: none; margin-left: 1.5rem;">Contact Us</a>
-        </nav>
-    </header>
+<!-- HEADER -->
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <span class="badge">Featuring Strip & Clip™ Tech</span>
-        <h1>Towing Electrical Installed in a Fraction of the Time</h1>
-        <p style="max-width: 700px; margin: 1rem auto; font-size: 1.2rem;">
-            Revolutionizing towing connectivity for DIYers and professional fleet installers. Built with our signature quick-connect system—completely eliminating wire crimping and butt-connecting.
-        </p>
-        <a href="#products" class="btn">Browse Product Lineup</a>
-    </section>
+<header>
+    <h1>HOLLINS</h1>
+    <span>MANUFACTURING</span>
 
-    <!-- Our Story Section -->
-    <section id="about" class="section">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2>Our Story</h2>
-            <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
-                INSERT_YOUR_COMPANY_STORY_HERE (Example: We started this company to solve a major headache in the towing industry. Traditional wiring takes too long and fails too often. That is why we invented our patented Strip & Clip technology...)
-            </p>
-        </div>
-    </section>
+```
+<nav>
+    <a href="#story">Our Story</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+</nav>
+```
 
-    <!-- Product Showcase Gallery -->
-    <section id="products" class="section bg-light">
-        <div class="text-center">
-            <h2>Our Premium Towing Solutions</h2>
-            <p>Engineered tough for maximum connection strength and rapid setup times.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <img class="product-img" src="connectors.jpg" alt="Electrical Connectors" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Electrical Connectors ]</div>
-                <h3>Electrical Connectors</h3>
-                <p>Equipped with seamless quick-connect mechanisms.</p>
-            </div>
-            <div class="card">
-                <img class="product-img" src="plugs.jpg" alt="Trailer & Vehicle Plugs" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Trailer Plugs ]</div>
-                <h3>Trailer & Vehicle Plugs</h3>
-                <p>Heavy-duty weather-sealed towing plugs.</p>
-            </div>
-            <div class="card">
-                <img class="product-img" src="junction-box.jpg" alt="Trailer Junction Box" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Junction Box ]</div>
-                <h3>Trailer Junction Boxes</h3>
-                <p>Organized, secure distribution for trailer wiring.</p>
-            </div>
-            <div class="card">
-                <img class="product-img" src="fuse-holders.jpg" alt="Inline Fuse Holders" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Fuse Holders ]</div>
-                <h3>Inline Fuse Holders</h3>
-                <p>Crucial circuit protection without tricky splice tools.</p>
-            </div>
-            <div class="card">
-                <img class="product-img" src="brackets.jpg" alt="Trailer Hitch Brackets" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Hitch Brackets ]</div>
-                <h3>Trailer Hitch Brackets</h3>
-                <p>Rugged structural mounting brackets built to endure.</p>
-            </div>
-        </div>
-    </section>
+</header>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="section">
-        <div class="text-center" style="margin-bottom: 3rem;">
-            <h2>Contact Us</h2>
-            <p>Get in touch for bulk orders, fleet pricing, or product inquiries.</p>
-        </div>
-        <div class="contact-container">
-            <div>
-                <h3>Get in Touch</h3>
-                <p><strong>📍 Address:</strong> INSERT_PHYSICAL_ADDRESS_HERE</p>
-                <p><strong>📞 Phone:</strong> INSERT_PHONE_NUMBER_HERE</p>
-                <p><strong>✉️ Email:</strong> INSERT_EMAIL_ADDRESS_HERE</p>
-            </div>
-            <div>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" required placeholder="How can we help you?"></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width:100%;">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
 
-    <footer class="bg-light text-center" style="padding: 2rem; font-size: 0.9rem; border-top: 1px solid #eee; color: #777;">
-        <p>&copy; 2026 INSERT_YOUR_COMPANY_NAME_HERE. All rights reserved.</p>
-    </footer>
+<section class="hero">
+    <h2>Towing Electrical Installed in a Fraction of the Time</h2>
+    <p>Professional quick-connect systems built for installers.</p>
+    <a class="btn" href="#products">View Products</a>
+</section>
+
+<!-- STORY -->
+
+<section id="story" class="section">
+    <h2 class="green">Our Brand Story</h2>
+
+```
+<div class="container">
+    <p><strong>Making it Easier to Connect with What Drives You.</strong></p>
+
+    <p>
+    For over 20 years, we installed electrical systems, catering to diverse towing and automotive applications. Experiencing challenges again and again, we knew there had to be a better way. With the installer in mind, we've fused ingenuity, innovation, and good old-fashioned common sense into every product we offer.
+    </p>
+
+    <p>
+    Every Hollins product has been created for you to complete the job faster, with fewer steps, and without the fuss and frustration. Our patented solutions are pulling the industry in exciting new directions - empowering both do-it-yourselfers and seasoned professionals alike.
+    </p>
+</div>
+```
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products" class="section">
+    <h2 class="green">Electrical Connectors</h2>
+
+```
+<div class="grid">
+
+    <div class="card">
+        <img src="connector ETP200.png">
+        <p>ETP200 Connector</p>
+    </div>
+
+    <div class="card">
+        <img src="connector ETP 210 FULL.png">
+        <p>ETP210 Full</p>
+    </div>
+
+    <div class="card">
+        <img src="connector ETP 220-FULL.png">
+        <p>ETP220 Full</p>
+    </div>
+
+    <div class="card">
+        <img src="connector ETP230 FULL.png">
+        <p>ETP230 Full</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+    <h2 class="green">Contact Us</h2>
+
+```
+<div class="contact-box">
+    <p><strong>Phone:</strong> 888-238-5332</p>
+    <p><strong>Email:</strong> info@etpmfg.com</p>
+</div>
+```
+
+</section>
 
 </body>
 </html>
