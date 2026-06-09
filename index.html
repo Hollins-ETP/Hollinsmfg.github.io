@@ -97,6 +97,7 @@ nav a:hover, nav a.active{
     margin-top:20px;
     border-radius:6px;
     text-decoration:none;
+    cursor: pointer;
 }
 
 /* SECTIONS */
@@ -192,10 +193,21 @@ nav a:hover, nav a.active{
 
 .contact-box a {
     text-decoration: none;
+    color: var(--green);
 }
 
 .contact-box a:hover {
     text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    opacity: 0.8;
 }
 
 </style>
@@ -249,10 +261,10 @@ nav a:hover, nav a.active{
 
     <div class="category-title">Electrical Connectors</div>
     <div class="grid">
-        <div class="card"><img src="etp200.png"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
-        <div class="card"><img src="connector%20ETP%20210%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP210</p></div>
-        <div class="card"><img src="connector%20ETP%20220-FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP220</p></div>
-        <div class="card"><img src="etp230.png"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
+        <div class="card"><img src="etp200.png" alt="ETP200"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
+        <div class="card"><img src="connector%20ETP%20210%20FULL.png" alt="ETP210"><p style="margin-top:10px;font-weight:bold;">ETP210</p></div>
+        <div class="card"><img src="connector%20ETP%20220-FULL.png" alt="ETP220"><p style="margin-top:10px;font-weight:bold;">ETP220</p></div>
+        <div class="card"><img src="etp230.png" alt="ETP230"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
     </div>
 
     <div class="category-title">Hitch Mounted Brackets</div>
@@ -318,8 +330,7 @@ nav a:hover, nav a.active{
             <p style="margin-top:10px;font-weight:bold;">ETP900</p>
         </div>
         <div class="card">
-            <img src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png'; this.style.display='none'; document.getElementById('cs-fallback').style.display='flex';">
-            <div id="cs-fallback" class="coming-soon-box" style="display:none;">📷 Image Coming Soon</div>
+            <img src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP910</p>
         </div>
     </div>
@@ -329,38 +340,45 @@ nav a:hover, nav a.active{
 <div id="contact" class="page-section">
     <h2>Contact Us</h2>
     <div class="contact-box">
-        <p><strong>📞 Phone:</strong> 888-238-5332</p>
-        <p><strong>✉️ Email:</strong> 
-            <a href="mailto:info@etpmfg.com" style="color:var(--green);font-weight:bold;">
-                info@etpmfg.com
-            </a>
-        </p>
+        <p><strong>HOLLINS Manufacturing</strong></p>
+        <p>Email: <a href="mailto:info@hollinsmanufacturing.com">info@hollinsmanufacturing.com</a></p>
+        <p>Phone: (555) 123-4567</p>
     </div>
 </div>
 
-<!-- AUTOMATED PAGE SWITCHER CODE -->
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 HOLLINS Manufacturing. All Rights Reserved.</p>
+</footer>
+
+<!-- INTERACTIVE NAVIGATION JAVASCRIPT -->
 <script>
 function showPage(pageId) {
-    var sections = document.querySelectorAll('.page-section');
-    sections.forEach(function(section) {
+    // Hide all view views
+    const sections = document.querySelectorAll('.page-section');
+    sections.forEach(section => {
         section.style.display = 'none';
     });
 
-    var targetPage = document.getElementById(pageId);
-    if(targetPage) {
-        targetPage.style.display = 'block';
+    // Show the requested view
+    const activeSection = document.getElementById(pageId);
+    if (activeSection) {
+        activeSection.style.display = 'block';
     }
 
-    var navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(function(link) {
+    // Manage active states on nav headers
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
         link.classList.remove('active');
     });
-    var activeLink = document.getElementById('nav-' + pageId);
-    if(activeLink) {
+
+    const activeLink = document.getElementById('nav-' + pageId);
+    if (activeLink) {
         activeLink.classList.add('active');
     }
     
-    window.scrollTo(0,0);
+    // Automatically scroll to the top of the newly selected page view
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 </script>
 
