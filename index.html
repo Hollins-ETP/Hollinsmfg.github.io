@@ -14,9 +14,13 @@
         }
         body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; background-color: var(--white); }
         
-        /* Dark Header to pop green and orange */
-        header { background: var(--dark); color: var(--white); padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
+        /* Dark Header designed to feature your logo image perfectly */
+        header { background: var(--dark); color: var(--white); padding: 2rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
         
+        /* Centered logo container sizing */
+        .logo-box { max-width: 400px; width: 90%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        .logo-box img { width: 100%; height: auto; max-height: 120px; object-fit: contain; }
+
         header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1.8rem; }
         header nav a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 1.1rem; opacity: 0.9; transition: opacity 0.2s; }
         header nav a:hover { opacity: 1; color: var(--hollins-green); }
@@ -26,11 +30,12 @@
         .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
         .badge { background: var(--strip-orange); color: var(--white); padding: 0.4rem 1rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         
-        /* Buttons using your exact Strip 'N Clip Orange and White text combo */
-        .btn { display: inline-block; background: var(--strip-orange); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: 2px solid var(--strip-orange); cursor: pointer; transition: transform 0.2s, background-color 0.2s; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .btn:hover { transform: scale(1.03); background-color: #d65913; border-color: #d65913; }
-        .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
-        .btn-secondary:hover { background: var(--white); color: var(--dark); }
+        /* Buttons setup: Browse Products is now Hollins Green, Download/Strip features stay Orange */
+        .btn { display: inline-block; background: var(--hollins-green); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: 2px solid var(--hollins-green); cursor: pointer; transition: transform 0.2s, background-color 0.2s; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn:hover { transform: scale(1.03); background-color: #4cae4c; border-color: #4cae4c; }
+        
+        .btn-orange { background: var(--strip-orange); border-color: var(--strip-orange); }
+        .btn-orange:hover { background-color: #d65913; border-color: #d65913; }
         
         .section { padding: 5rem 2rem; }
         .bg-light { background: var(--light); }
@@ -50,12 +55,15 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation with Image Logo Support -->
     <header>
-        <div style="width: 100%; line-height: 1.0;">
-            <!-- Custom-styled font settings mimicking your logo weight and spacing -->
-            <div style="font-family: 'Arial Black', Impact, sans-serif; font-weight: 900; font-size: 5.5rem; letter-spacing: 2px; color: var(--hollins-green);">HOLLINS</div>
-            <div style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 4px; color: var(--white); margin-top: 0.7rem; font-weight: 500;">Expert Towing Products</div>
+        <div class="logo-box">
+            <!-- This code looks for a file uploaded to GitHub named logo.png -->
+            <img src="logo.png" alt="HOLLINS Expert Towing Products" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+            <!-- Secure fallback text if the file is missing from your repository -->
+            <div style="display: none; font-family: 'Arial Black', Impact, sans-serif; font-weight: 900; font-size: 5rem; letter-spacing: 2px; color: var(--hollins-green); line-height: 1.1;">
+                HOLLINS<br><span style="font-size: 1.1rem; letter-spacing: 4px; color: var(--white); font-weight: 500;">EXPERT TOWING PRODUCTS</span>
+            </div>
         </div>
         
         <nav>
@@ -73,7 +81,7 @@
             Revolutionizing towing connectivity for DIYers and professional fleet installers. Built with our signature quick-connect system—completely eliminating wire crimping and butt-connecting.
         </p>
         <a href="#products" class="btn">Browse Products</a>
-        <a href="Hollins ETP Products 03.10.26.pdf" target="_blank" class="btn btn-secondary">📋 Download Product Guide (PDF)</a>
+        <a href="Hollins ETP Products 03.10.26.pdf" target="_blank" class="btn btn-orange">📋 Download Product Guide (PDF)</a>
     </section>
 
     <!-- Our Story Section -->
@@ -93,11 +101,12 @@
     <!-- Product Showcase Gallery -->
     <section id="products" class="section bg-light">
         <div class="text-center">
-            <h2 style="font-size: 2.2rem; color: var(--dark);">Our Premium Towing Solutions</h2>
+            <h2>Our Premium Towing Solutions</h2>
             <p style="color: #666;">Engineered tough for maximum connection strength and rapid setup times.</p>
         </div>
         <div class="grid">
             <div class="card">
+                <!-- If you upload connectors.png, this will instantly display it instead of the grey box -->
                 <img class="product-img" src="connectors.png" alt="Electrical Connectors" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                 <div class="fallback-box">[ Photo: Electrical Connectors ]</div>
                 <h3>Electrical Connectors</h3>
@@ -132,14 +141,3 @@
 
     <!-- Contact Us Section -->
     <section id="contact" class="section">
-        <div class="text-center" style="margin-bottom: 3rem;">
-            <h2 style="font-size: 2.2rem; color: var(--dark);">Contact Us</h2>
-            <p style="color: #666;">Get in touch for bulk orders, fleet pricing, or product inquiries.</p>
-        </div>
-        <div class="contact-container">
-            <div>
-                <h3 style="margin-top: 0;">Get in Touch</h3>
-                <p style="font-size: 1.15rem; margin-bottom: 1rem;"><strong>📞 Phone:</strong> 888-238-5332</p>
-                <p style="font-size: 1.15rem;"><strong>✉️ Email:</strong> info@etpmfg.com</p>
-            </div>
-            <div>
