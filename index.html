@@ -6,8 +6,7 @@
 <title>HOLLINS Manufacturing</title>
 
 <style>
-
-/* RESET (removes ALL dot / bullet / weird spacing issues) */
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -98,6 +97,7 @@ nav a:hover, nav a.active{
     margin-top:20px;
     border-radius:6px;
     text-decoration:none;
+    cursor: pointer;
 }
 
 /* SECTIONS */
@@ -153,7 +153,7 @@ nav a:hover, nav a.active{
     object-fit:contain;
 }
 
-/* COMING SOON PLACEHOLDER BOX GRAPHIC SETUP */
+/* COMING SOON PLACEHOLDER */
 .coming-soon-box {
     width: 100%;
     height: 180px;
@@ -198,7 +198,6 @@ nav a:hover, nav a.active{
 .contact-box a:hover {
     text-decoration: underline;
 }
-
 </style>
 </head>
 
@@ -216,7 +215,7 @@ nav a:hover, nav a.active{
     </nav>
 </header>
 
-<!-- HOME / HERO LANDING PAGE VIEW -->
+<!-- HOME PAGE VIEW -->
 <div id="home" class="page-section">
     <section class="hero">
         <h2>Engineered towing & trailer electrical solutions built for speed, strength, and reliability.</h2>
@@ -300,7 +299,6 @@ nav a:hover, nav a.active{
         </div>
     </div>
 
-    <!-- NEW 2-GRID EXTENSION HARNESSES SECTION -->
     <div class="category-title">Extension Harnesses</div>
     <div class="grid">
         <div class="card">
@@ -369,3 +367,8 @@ function showPage(pageId) {
     navLinks.forEach(function(link) {
         link.classList.remove('active');
     });
+    var activeLink = document.getElementById('nav-' + pageId);
+    if(activeLink) {
+        activeLink.classList.add('active');
+    }
+    
