@@ -21,7 +21,7 @@ ul, li{
     --green:#2fb34a;
     --black:#0f0f0f;
     --gray:#f4f4f4;
-    --orange:#ff6600; /* Added brand orange color */
+    --orange:#ff6600;
 }
 
 body{
@@ -84,7 +84,6 @@ nav a:hover, nav a.active{
     font-size:1.1rem;
 }
 
-/* Highlight style for the feature text */
 .highlight-orange {
     color: var(--orange);
     font-weight: bold;
@@ -148,7 +147,6 @@ nav a:hover, nav a.active{
     background:white;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
 }
 
 .card:hover {
@@ -162,22 +160,17 @@ nav a:hover, nav a.active{
     object-fit:contain;
 }
 
-/* Description text container inside cards */
 .prod-desc {
     display: none;
     margin-top: 10px;
     font-size: 0.85rem;
-    color: #666;
+    color: #555;
     line-height: 1.4;
     background: #f9f9f9;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     border-left: 3px solid var(--green);
     text-align: left;
-}
-
-.card.active-card .prod-desc {
-    display: block;
 }
 
 /* CONTACT CONTAINER BOX */
@@ -220,7 +213,6 @@ footer {
     font-size: 0.85rem;
     opacity: 0.8;
 }
-
 </style>
 </head>
 
@@ -229,7 +221,6 @@ footer {
 <!-- HEADER -->
 <header>
     <img src="logo.png" alt="HOLLINS Manufacturing" class="logo-img" onclick="showPage('home')">
-
     <nav>
         <a onclick="showPage('story')" id="nav-story">Our Story</a>
         <a onclick="showPage('products')" id="nav-products">Products</a>
@@ -268,7 +259,9 @@ footer {
 <!-- PRODUCTS VIEW -->
 <div id="products" class="page-section">
     <h2>Products</h2>
-    <p style="color: #777; margin-bottom: -20px; font-size: 0.9rem;">(Click any product card to see its structural specifications)</p>
+    <p style="color: #666; margin-bottom: 10px; font-size: 0.95rem; font-weight: bold;">
+        👉 Click any item card to see its technical description below.
+    </p>
 
     <div class="category-title">Electrical Connectors</div>
     <div class="grid">
@@ -342,10 +335,12 @@ footer {
         <div class="card" onclick="toggleDesc(this)">
             <img src="fuse2.jpg" onerror="this.onerror=null; this.src='fuse2.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP820</p>
-            <div class="prod-desc">Dual-pack quick-connect ATC/ATM fuse holders for expanded circuits. (Note: Listed as ETP800-2 in product sheet).</div>
+            <div class="prod-desc">Dual-pack quick-connect ATC/ATM fuse holders for expanded circuits.</div>
         </div>
     </div>
 
     <div class="category-title">4-Pin Plugs</div>
     <div class="grid">
         <div class="card" onclick="toggleDesc(this)">
+            <img src="plug1.jpg" onerror="this.onerror=null; this.src='plug1.png';">
+            <p style="margin-top:10px;font-weight:bold;">ETP300</p>
