@@ -26,7 +26,6 @@ ul, li{
 
 body{
     font-family:Arial, sans-serif;
-    scroll-behavior:smooth;
     background:white;
 }
 
@@ -63,13 +62,14 @@ nav a{
     text-decoration:none;
     margin:0 15px;
     font-weight:bold;
+    cursor: pointer;
 }
 
-nav a:hover{
+nav a:hover, nav a.active{
     color:var(--green);
 }
 
-/* HERO */
+/* HERO / HOME DEFAULT */
 .hero{
     background:var(--gray);
     text-align:center;
@@ -100,13 +100,19 @@ nav a:hover{
     text-decoration:none;
 }
 
-/* SECTIONS */
-.section{
-    padding:90px 20px;
-    text-align:center;
+/* SECTIONS (Hidden by default until clicked) */
+.page-section{
+    display: none;
+    padding: 90px 20px;
+    text-align: center;
 }
 
-.section h2{
+/* Default home page visibility wrapper */
+#home.page-section {
+    display: block;
+}
+
+.page-section h2{
     color:var(--green);
     margin-bottom:20px;
 }
@@ -148,7 +154,7 @@ nav a:hover{
     object-fit:contain;
 }
 
-/* CONTACT CONTAINER BOX FIXED */
+/* CONTACT CONTAINER BOX */
 .contact-box {
     background: var(--gray);
     padding: 40px;
@@ -184,86 +190,81 @@ nav a:hover{
 
 <!-- HEADER -->
 <header>
-    <h1>HOLLINS</h1>
-    <span>MANUFACTURING</span>
+    <!-- Clicking the main title resets back to the main landing screen view -->
+    <h1 style="cursor:pointer;" onclick="showPage('home')">HOLLINS</h1>
+    <span style="cursor:pointer;" onclick="showPage('home')">MANUFACTURING</span>
 
     <nav>
-        <a href="#story">Our Story</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact Us</a>
+        <a onclick="showPage('story')" id="nav-story">Our Story</a>
+        <a onclick="showPage('products')" id="nav-products">Products</a>
+        <a onclick="showPage('contact')" id="nav-contact">Contact Us</a>
     </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-    <h2>Engineered towing & trailer electrical solutions built for speed, strength, and reliability.</h2>
-    <p>
-        Professional-grade towing products designed for installers, fleets, and heavy-duty use.
-    </p>
+<!-- HOME / HERO LANDING PAGE VIEW -->
+<div id="home" class="page-section">
+    <section class="hero">
+        <h2>Engineered towing & trailer electrical solutions built for speed, strength, and reliability.</h2>
+        <p>
+            Professional-grade towing products designed for installers, fleets, and heavy-duty use.
+        </p>
+        <a class="btn" onclick="showPage('products')">View Products</a>
+    </section>
+</div>
 
-    <a class="btn" href="#products">View Products</a>
-</section>
-
-<!-- STORY -->
-<section id="story" class="section">
+<!-- STORY VIEW (Shows completely on its own) -->
+<div id="story" class="page-section">
     <h2>Our Brand Story</h2>
-
     <div class="container">
         <p style="margin-bottom: 15px;"><strong>Making it Easier to Connect with What Drives You.</strong></p>
-
         <p style="margin-bottom: 15px;">
         For over 20 years, we installed electrical systems across towing and automotive industries.
         We saw the same problem again and again - installs taking too long and failing too often.
         </p>
-
         <p>
         That’s why every Hollins product is engineered to reduce install time, simplify connections,
         and deliver long-lasting performance in the field.
         </p>
     </div>
-</section>
-
-<!-- PRODUCTS SECTION -->
-<section id="products" class="section">
-
-<h2>Products</h2>
-
-<div class="category-title">Electrical Connectors</div>
-<div class="grid">
-    <div class="card"><img src="connector%20ETP200.png"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
-    <div class="card"><img src="connector%20ETP%20210%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP210</p></div>
-    <div class="card"><img src="connector%20ETP%20220-FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP220</p></div>
-    <div class="card"><img src="connector%20ETP230%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
 </div>
 
-<div class="category-title">Brackets</div>
-<div class="grid">
-    <div class="card"><img src="brackets1.jpg"><p style="margin-top:10px;font-weight:bold;">Hitch Bracket</p></div>
-    <div class="card"><img src="brackets2.jpg"><p style="margin-top:10px;font-weight:bold;">Mount Bracket</p></div>
-</div>
+<!-- PRODUCTS VIEW (Shows completely on its own) -->
+<div id="products" class="page-section">
+    <h2>Products</h2>
 
-<div class="category-title">Junction Boxes</div>
-<div class="grid">
-    <div class="card"><img src="junction1.jpg"><p style="margin-top:10px;font-weight:bold;">Junction Box</p></div>
-</div>
-
-<div class="category-title">Inline Fuse Holders</div>
-<div class="grid">
+    <div class="category-title">Electrical Connectors</div>
     <div class="grid">
-    <div class="card"><img src="fuse1.jpg"><p style="margin-top:10px;font-weight:bold;">Fuse Holder</p></div>
+        <div class="card"><img src="connector%20ETP200.png"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
+        <div class="card"><img src="connector%20ETP%20210%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP210</p></div>
+        <div class="card"><img src="connector%20ETP%20220-FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP220</p></div>
+        <div class="card"><img src="connector%20ETP230%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
+    </div>
+
+    <div class="category-title">Brackets</div>
+    <div class="grid">
+        <div class="card"><img src="brackets1.jpg"><p style="margin-top:10px;font-weight:bold;">Hitch Bracket</p></div>
+        <div class="card"><img src="brackets2.jpg"><p style="margin-top:10px;font-weight:bold;">Mount Bracket</p></div>
+    </div>
+
+    <div class="category-title">Junction Boxes</div>
+    <div class="grid">
+        <div class="card"><img src="junction1.jpg"><p style="margin-top:10px;font-weight:bold;">Junction Box</p></div>
+    </div>
+
+    <div class="category-title">Inline Fuse Holders</div>
+    <div class="grid">
+        <div class="card"><img src="fuse1.jpg"><p style="margin-top:10px;font-weight:bold;">Fuse Holder</p></div>
+    </div>
+
+    <div class="category-title">Plugs</div>
+    <div class="grid">
+        <div class="card"><img src="plug1.jpg"><p style="margin-top:10px;font-weight:bold;">7-Pin Plug</p></div>
+    </div>
 </div>
 
-<div class="category-title">Plugs</div>
-<div class="grid">
-    <div class="card"><img src="plug1.jpg"><p style="margin-top:10px;font-weight:bold;">7-Pin Plug</p></div>
-</div>
-
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="section">
+<!-- CONTACT VIEW (Shows completely on its own) -->
+<div id="contact" class="page-section">
     <h2>Contact Us</h2>
-
     <div class="contact-box">
         <p><strong>📞 Phone:</strong> 888-238-5332</p>
         <p><strong>✉️ Email:</strong> 
@@ -272,7 +273,37 @@ nav a:hover{
             </a>
         </p>
     </div>
-</section>
+</div>
+
+<!-- AUTOMATED PAGE SWITCHER CODE -->
+<script>
+function showPage(pageId) {
+    // Hide every page view area first
+    var sections = document.querySelectorAll('.page-section');
+    sections.forEach(function(section) {
+        section.style.display = 'none';
+    });
+
+    // Display only the page view area that matches the link clicked
+    var targetPage = document.getElementById(pageId);
+    if(targetPage) {
+        targetPage.style.display = 'block';
+    }
+
+    // Update active highlight color states in menu bar
+    var navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(function(link) {
+        link.classList.remove('active');
+    });
+    var activeLink = document.getElementById('nav-' + pageId);
+    if(activeLink) {
+        activeLink.classList.add('active');
+    }
+    
+    // Auto scroll view back to the top when navigating pages
+    window.scrollTo(0,0);
+}
+</script>
 
 </body>
 </html>
