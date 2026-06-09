@@ -37,13 +37,30 @@ header{
     padding:30px 20px;
 }
 
+.logo-container {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .logo-img {
     height: 70px;
     max-width: 100%;
     object-fit: contain;
-    cursor: pointer;
     display: block;
     margin: 0 auto;
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 5px;
+    font-weight: bold;
+    opacity: 0.9;
 }
 
 /* NAV */
@@ -202,7 +219,10 @@ footer {
 
 <!-- HEADER -->
 <header>
-    <img src="logo.png" alt="HOLLINS Manufacturing" class="logo-img" onclick="showPage('home')">
+    <div class="logo-container" onclick="showPage('home')">
+        <img src="logo.png" alt="HOLLINS Manufacturing" class="logo-img">
+        <span class="logo-subtitle">Expert Towing Products</span>
+    </div>
 
     <nav>
         <a onclick="showPage('story')" id="nav-story">Our Story</a>
@@ -366,5 +386,3 @@ function showPage(pageId) {
 }
 </script>
 
-</body>
-</html>
