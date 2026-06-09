@@ -153,6 +153,23 @@ nav a:hover, nav a.active{
     object-fit:contain;
 }
 
+/* COMING SOON PLACEHOLDER BOX GRAPHIC SETUP */
+.coming-soon-box {
+    width: 100%;
+    height: 180px;
+    background: #eaeaea;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    border: 2px dashed #ccc;
+    text-transform: uppercase;
+}
+
 /* CONTACT CONTAINER BOX */
 .contact-box {
     background: var(--gray);
@@ -271,7 +288,6 @@ nav a:hover, nav a.active{
         </div>
     </div>
 
-    <!-- ADJUSTED 2-GRID INLINE FUSE HOLDERS SECTION -->
     <div class="category-title">Inline Fuse Holders</div>
     <div class="grid">
         <div class="card">
@@ -284,9 +300,30 @@ nav a:hover, nav a.active{
         </div>
     </div>
 
-    <div class="category-title">Plugs</div>
+    <div class="category-title">4-Pin Plugs</div>
     <div class="grid">
-        <div class="card"><img src="plug1.jpg"><p style="margin-top:10px;font-weight:bold;">7-Pin Plug</p></div>
+        <div class="card">
+            <img src="plug1.jpg" onerror="this.onerror=null; this.src='plug1.png';">
+            <p style="margin-top:10px;font-weight:bold;">ETP300</p>
+        </div>
+        <div class="card">
+            <img src="plug2.jpg" onerror="this.onerror=null; this.src='plug2.png';">
+            <p style="margin-top:10px;font-weight:bold;">ETP310</p>
+        </div>
+    </div>
+
+    <div class="category-title">7-Pin Plugs</div>
+    <div class="grid">
+        <div class="card">
+            <img src="plug3.jpg" onerror="this.onerror=null; this.src='plug3.png';">
+            <p style="margin-top:10px;font-weight:bold;">ETP900</p>
+        </div>
+        <!-- AUTOMATED IMAGE COMING SOON FALLBACK LAYER FOR ETP910 -->
+        <div class="card">
+            <img src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png'; this.style.display='none'; document.getElementById('cs-fallback').style.display='flex';">
+            <div id="cs-fallback" class="coming-soon-box" style="display:none;">📷 Image Coming Soon</div>
+            <p style="margin-top:10px;font-weight:bold;">ETP910</p>
+        </div>
     </div>
 </div>
 
