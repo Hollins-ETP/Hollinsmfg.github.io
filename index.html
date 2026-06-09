@@ -6,26 +6,40 @@
     <title>HOLLINS Expert Towing Products | Strip & Clip</title>
     <style>
         :root {
-            --primary: #25D366; /* WhatsApp Green */
-            --dark: #1b1b1b;    /* Rugged Black */
-            --light: #f4f6f5;   /* Clean light gray */
-            --accent: #ffc107;  /* High-visibility yellow accent */
+            --primary: #005A5B; /* Deep Dark Teal */
+            --dark: #121212;    /* Sleek Black */
+            --light: #f4f6f5;   /* Clean light gray background */
+            --white: #ffffff;   /* Pure White */
         }
-        body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; background-color: white; }
-        header { background: var(--dark); color: white; padding: 2rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--primary); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('hero-bg.jpg') center/cover #1b1b1b; color: white; padding: 6rem 2rem; text-align: center; }
+        body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; background-color: var(--white); }
+        
+        /* Deep Teal Header with White Text */
+        header { background: var(--primary); color: var(--white); padding: 2rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--dark); }
+        .logo-container { margin-bottom: 1rem; width: 100%; display: flex; justify-content: center; }
+        .logo-img { max-width: 300px; height: auto; max-height: 100px; object-fit: contain; }
+        
+        header nav style { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
+        header nav a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.1rem; opacity: 0.9; transition: opacity 0.2s; }
+        header nav a:hover { opacity: 1; text-decoration: underline; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('hero-bg.jpg') center/cover var(--dark); color: var(--white); padding: 6rem 2rem; text-align: center; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .badge { background: var(--accent); color: var(--dark); padding: 0.25rem 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: none; cursor: pointer; transition: transform 0.2s; font-size: 1rem; }
-        .btn:hover { transform: scale(1.03); }
-        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
-        .btn-secondary:hover { background: white; color: var(--dark); }
+        .badge { background: var(--primary); color: var(--white); padding: 0.3rem 0.8rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        
+        /* Buttons styled in Dark Teal & White */
+        .btn { display: inline-block; background: var(--primary); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: 2px solid var(--primary); cursor: pointer; transition: transform 0.2s, background-color 0.2s; font-size: 1rem; }
+        .btn:hover { transform: scale(1.03); background-color: #004445; border-color: #004445; }
+        .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
+        .btn-secondary:hover { background: var(--white); color: var(--primary); }
+        
         .section { padding: 5rem 2rem; }
         .bg-light { background: var(--light); }
         .text-center { text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e0e0e0; }
+        .card { background: var(--white); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e0e0e0; }
         .product-img { width: 100%; height: 200px; background: #ddd; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold; }
+        
         .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto; }
         .form-group { margin-bottom: 1.2rem; text-align: left; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
@@ -34,23 +48,26 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation with Teal Background and Logo Slot -->
     <header>
-        <div style="width: 100%; line-height: 1.0;">
-            <div style="font-weight: 900; font-size: 5.5rem; letter-spacing: 3px; color: var(--primary);">HOLLINS</div>
-            <div style="font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-top: 0.6rem; font-weight: 600;">Expert Towing Products</div>
+        <div class="logo-container">
+            <!-- This looks for your uploaded logo.png file. If it hasn't been uploaded yet, it falls back to clean white text. -->
+            <img class="logo-img" src="logo.png" alt="HOLLINS Expert Towing Products" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+            <div style="display:none; font-weight: 900; font-size: 4.5rem; letter-spacing: 3px; color: var(--white); line-height: 1;">HOLLINS</div>
         </div>
-        <nav style="width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1.8rem;">
-            <a href="#about" style="color: white; text-decoration: none; font-weight: 500;">Our Story</a>
-            <a href="#products" style="color: white; text-decoration: none; font-weight: 500;">Products</a>
-            <a href="#contact" style="color: white; text-decoration: none; font-weight: 500;">Contact Us</a>
+        <div style="font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; color: var(--white); margin-top: -0.2rem; font-weight: 600; opacity: 0.85; margin-bottom: 1rem;">Expert Towing Products</div>
+        
+        <nav style="width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+            <a href="#about">Our Story</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact Us</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <span class="badge">Featuring Strip & Clip™ Tech</span>
-        <h1>Towing Electrical Installed in a Fraction of the Time</h1>
+        <h1 style="margin-top: 1.5rem;">Towing Electrical Installed in a Fraction of the Time</h1>
         <p style="max-width: 700px; margin: 1rem auto 2rem auto; font-size: 1.2rem; color: #e0e0e0;">
             Revolutionizing towing connectivity for DIYers and professional fleet installers. Built with our signature quick-connect system—completely eliminating wire crimping and butt-connecting.
         </p>
@@ -61,7 +78,7 @@
     <!-- Our Story Section -->
     <section id="about" class="section">
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 2.2rem; color: var(--dark); margin-bottom: 0.5rem;">OUR BRAND STORY</h2>
+            <h2 style="font-size: 2.2rem; color: var(--dark); margin-bottom: 0.5rem; text-transform: uppercase;">OUR BRAND STORY</h2>
             <h3 style="font-size: 1.4rem; color: var(--primary); font-weight: 600; margin-bottom: 1.5rem;">Making it Easier to Connect with What Drives You.</h3>
             <p style="font-size: 1.15rem; color: #444; line-height: 1.8; margin-bottom: 1rem;">
                 For over 20 years, we installed electrical systems, catering to diverse towing and automotive applications. Experiencing challenges again and again, we knew there had to be a better way. With the installer in mind, we've fused ingenuity, innovation, and good old-fashioned common sense into every product we offer.
@@ -121,26 +138,3 @@
         <div class="contact-container">
             <div>
                 <h3 style="margin-top: 0;">Get in Touch</h3>
-                <p style="font-size: 1.15rem; margin-bottom: 1rem;"><strong>📞 Phone:</strong> 888-238-5332</p>
-                <p style="font-size: 1.15rem;"><strong>✉️ Email:</strong> info@etpmfg.com</p>
-            </div>
-            <div>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" required placeholder="How can we help you?"></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width:100%; margin: 0;">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
