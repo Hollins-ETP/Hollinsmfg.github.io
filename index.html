@@ -100,14 +100,13 @@ nav a:hover, nav a.active{
     text-decoration:none;
 }
 
-/* SECTIONS (Hidden by default until clicked) */
+/* SECTIONS */
 .page-section{
     display: none;
     padding: 90px 20px;
     text-align: center;
 }
 
-/* Default home page visibility wrapper */
 #home.page-section {
     display: block;
 }
@@ -190,7 +189,6 @@ nav a:hover, nav a.active{
 
 <!-- HEADER -->
 <header>
-    <!-- Clicking the main title resets back to the main landing screen view -->
     <h1 style="cursor:pointer;" onclick="showPage('home')">HOLLINS</h1>
     <span style="cursor:pointer;" onclick="showPage('home')">MANUFACTURING</span>
 
@@ -205,14 +203,15 @@ nav a:hover, nav a.active{
 <div id="home" class="page-section">
     <section class="hero">
         <h2>Engineered towing & trailer electrical solutions built for speed, strength, and reliability.</h2>
-        <p>
+        <p style="margin-bottom:15px;">
             Professional-grade towing products designed for installers, fleets, and heavy-duty use.
         </p>
+        <p>Featuring our signature <strong>Strip 'N Clip</strong> quick-connect engineering—slashing installation times to a fraction of traditional competitors.</p>
         <a class="btn" onclick="showPage('products')">View Products</a>
     </section>
 </div>
 
-<!-- STORY VIEW (Shows completely on its own) -->
+<!-- STORY VIEW -->
 <div id="story" class="page-section">
     <h2>Our Brand Story</h2>
     <div class="container">
@@ -228,16 +227,16 @@ nav a:hover, nav a.active{
     </div>
 </div>
 
-<!-- PRODUCTS VIEW (Shows completely on its own) -->
+<!-- PRODUCTS VIEW (Cleaned up filenames applied) -->
 <div id="products" class="page-section">
     <h2>Products</h2>
 
     <div class="category-title">Electrical Connectors</div>
     <div class="grid">
-        <div class="card"><img src="connector%20ETP200.png"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
+        <div class="card"><img src="etp200.png"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
         <div class="card"><img src="connector%20ETP%20210%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP210</p></div>
         <div class="card"><img src="connector%20ETP%20220-FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP220</p></div>
-        <div class="card"><img src="connector%20ETP230%20FULL.png"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
+        <div class="card"><img src="etp230.png"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
     </div>
 
     <div class="category-title">Brackets</div>
@@ -262,7 +261,7 @@ nav a:hover, nav a.active{
     </div>
 </div>
 
-<!-- CONTACT VIEW (Shows completely on its own) -->
+<!-- CONTACT VIEW -->
 <div id="contact" class="page-section">
     <h2>Contact Us</h2>
     <div class="contact-box">
@@ -278,19 +277,16 @@ nav a:hover, nav a.active{
 <!-- AUTOMATED PAGE SWITCHER CODE -->
 <script>
 function showPage(pageId) {
-    // Hide every page view area first
     var sections = document.querySelectorAll('.page-section');
     sections.forEach(function(section) {
         section.style.display = 'none';
     });
 
-    // Display only the page view area that matches the link clicked
     var targetPage = document.getElementById(pageId);
     if(targetPage) {
         targetPage.style.display = 'block';
     }
 
-    // Update active highlight color states in menu bar
     var navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(function(link) {
         link.classList.remove('active');
@@ -300,7 +296,6 @@ function showPage(pageId) {
         activeLink.classList.add('active');
     }
     
-    // Auto scroll view back to the top when navigating pages
     window.scrollTo(0,0);
 }
 </script>
