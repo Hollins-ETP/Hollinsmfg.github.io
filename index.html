@@ -15,9 +15,13 @@
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; background-color: var(--white); }
         
         /* Dark Header navigation bar structure */
-        header { background: var(--dark); color: var(--white); padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
+        header { background: var(--dark); color: var(--white); padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
         
-        header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
+        /* Clean container for your uploaded logo image */
+        .logo-container { max-width: 350px; width: 85%; margin: 0 auto; display: flex; justify-content: center; }
+        .logo-container img { width: 100%; height: auto; max-height: 110px; object-fit: contain; }
+
+        header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1.8rem; }
         header nav a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 1.1rem; opacity: 0.9; transition: opacity 0.2s; }
         header nav a:hover { opacity: 1; color: var(--hollins-green); }
 
@@ -52,13 +56,17 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section -->
+    <!-- Header Navigation Section using your Real Logo File -->
     <header>
-        <div style="width: 100%; line-height: 1.1;">
-            <!-- Typographic representation utilizing your Hollins Leaf Green color profile -->
-            <div style="font-weight: 800; font-size: 5.5rem; letter-spacing: 2px; color: var(--hollins-green);">HOLLINS</div>
-            <!-- Subtitle typography adjusted for crisp clarity and size scaling -->
-            <div style="font-size: 1.3rem; text-transform: uppercase; letter-spacing: 4px; color: #d1d5db; margin-top: 0.5rem; font-weight: 600;">Expert Towing Products</div>
+        <div class="logo-container">
+            <!-- This code looks for the logo photo uploaded to your GitHub repository -->
+            <img src="logo.png" alt="HOLLINS Expert Towing Products" onerror="this.style.display='none'; document.getElementById('text-fallback').style.display='block'">
+            
+            <!-- Safe placeholder if you haven't uploaded logo.png yet -->
+            <div id="text-fallback" style="display: none; width: 100%; line-height: 1.1;">
+                <div style="font-weight: 800; font-size: 5.5rem; letter-spacing: 2px; color: var(--hollins-green);">HOLLINS</div>
+                <div style="font-size: 1.3rem; text-transform: uppercase; letter-spacing: 4px; color: #d1d5db; margin-top: 0.5rem; font-weight: 600;">Expert Towing Products</div>
+            </div>
         </div>
         
         <nav>
@@ -101,7 +109,6 @@
         </div>
         <div class="grid">
             <div class="card">
-                <!-- Fallback triggers handle file extensions cleanly (supports png or jpg) -->
                 <img class="product-img" src="connectors.png" alt="Electrical Connectors" onerror="this.onerror=null; this.src='connectors.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb1').style.display='flex';}">
                 <div class="fallback-box" id="fb1">[ Photo: Electrical Connectors ]</div>
                 <h3>Electrical Connectors</h3>
@@ -126,13 +133,3 @@
                 <p>Crucial circuit protection without tricky splice tools.</p>
             </div>
             <div class="card">
-                <img class="product-img" src="brackets.png" alt="Trailer Hitch Brackets" onerror="this.onerror=null; this.src='brackets.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb5').style.display='flex';}">
-                <div class="fallback-box" id="fb5">[ Photo: Hitch Brackets ]</div>
-                <h3>Trailer Hitch Brackets</h3>
-                <p>Rugged structural mounting brackets built to endure.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Communication Contact Section -->
-    <section id="contact" class="section">
