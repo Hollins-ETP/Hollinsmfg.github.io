@@ -15,19 +15,14 @@
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #222; line-height: 1.6; background-color: var(--white); scroll-behavior: smooth; }
         
         /* Premium Header built in dark slate to highlight your crisp logo colors */
-        header { background: var(--dark-bg); color: var(--white); padding: 3.5rem 2rem 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 5px solid var(--hollins-green); }
+        header { background: var(--dark-bg); color: var(--white); padding: 3.5rem 2rem 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
         
-        /* Specialized layout drawing your exact rounded logo text style from scratch */
+        /* Clean logo text presentation */
         .logo-branding-group { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .hollins-main-title { font-size: 5rem; font-weight: 900; color: var(--hollins-green); letter-spacing: 2px; line-height: 1; text-transform: uppercase; }
         
-        .hollins-main-title { font-family: system-ui, -apple-system, sans-serif; font-size: 5.2rem; font-weight: 800; color: var(--hollins-green); display: flex; align-items: center; letter-spacing: -0.5px; line-height: 0.95; }
-        
-        /* Custom layout properties carving your unique split-crossbar H shape */
-        .logo-custom-h { position: relative; display: inline-block; padding-right: 1px; }
-        .logo-custom-h::after { content: ""; position: absolute; left: 24%; top: 43%; width: 52%; height: 14%; background-color: var(--dark-bg); z-index: 10; }
-
-        /* Crisp, clear pure white subtitle text centered below the green title */
-        .logo-sub-text { font-family: system-ui, -apple-system, sans-serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 6px; color: var(--white); font-weight: 700; margin-top: 0.8rem; -webkit-font-smoothing: antialiased; }
+        /* Crisp white subtitle text centered below the green title */
+        .logo-sub-text { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 6px; color: var(--white); font-weight: 700; margin-top: 0.8rem; -webkit-font-smoothing: antialiased; }
 
         header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 2.2rem; }
         header nav a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.1rem; opacity: 0.85; transition: opacity 0.2s; }
@@ -66,9 +61,7 @@
     <!-- Header Navigation Section -->
     <header>
         <div class="logo-branding-group">
-            <div class="hollins-main-title">
-                <span class="logo-custom-h">H</span>OLLINS
-            </div>
+            <div class="hollins-main-title">HOLLINS</div>
             <div class="logo-sub-text">Manufacturing</div>
         </div>
         
@@ -133,3 +126,11 @@
                 <img class="product-img" src="fuse-holders.png" alt="Inline Fuse Holders" onerror="this.onerror=null; this.src='fuse-holders.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb4').style.display='flex';}">
                 <div class="fallback-box" id="fb4">[ Photo: Fuse Holders ]</div>
                 <h3>Inline Fuse Holders</h3>
+                <p>Crucial circuit protection without tricky splice tools.</p>
+            </div>
+            <div class="card">
+                <img class="product-img" src="brackets.png" alt="Trailer Hitch Brackets" onerror="this.onerror=null; this.src='brackets.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb5').style.display='flex';}">
+                <div class="fallback-box" id="fb5">[ Photo: Hitch Brackets ]</div>
+                <h3>Trailer Hitch Brackets</h3>
+                <p>Rugged structural mounting brackets built to endure.</p>
+            </div>
