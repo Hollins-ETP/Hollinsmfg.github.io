@@ -144,14 +144,35 @@ nav a:hover, nav a.active{
 .card{
     border:1px solid #ddd;
     border-radius:10px;
-    padding:10px;
+    padding:15px;
     background:white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .card img{
     width:100%;
     height:180px;
     object-fit:contain;
+}
+
+/* Styled container for the popup bullet descriptions */
+.prod-desc {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid var(--green);
+    text-align: left;
 }
 
 /* CONTACT CONTAINER BOX */
@@ -242,129 +263,87 @@ footer {
 <!-- PRODUCTS VIEW -->
 <div id="products" class="page-section">
     <h2>Products</h2>
+    <p style="color: #666; margin-bottom: 10px; font-size: 0.95rem; font-weight: bold;">
+        👉 Click any item card to see its technical description below.
+    </p>
 
     <div class="category-title">Electrical Connectors</div>
     <div class="grid">
-        <div class="card"><img src="etp200.png" alt="ETP200"><p style="margin-top:10px;font-weight:bold;">ETP200</p></div>
-        <div class="card"><img src="connector%20ETP%20210%20FULL.png" alt="ETP210"><p style="margin-top:10px;font-weight:bold;">ETP210</p></div>
-        <div class="card"><img src="connector%20ETP%20220-FULL.png" alt="ETP220"><p style="margin-top:10px;font-weight:bold;">ETP220</p></div>
-        <div class="card"><img src="etp230.png" alt="ETP230"><p style="margin-top:10px;font-weight:bold;">ETP230</p></div>
+        <div class="card" onclick="toggleDesc(this)">
+            <img src="etp200.png" alt="ETP200">
+            <p style="margin-top:10px;font-weight:bold;">ETP200</p>
+            <div class="prod-desc">Reusable lever connector for 12–20 AWG wire, compatible with ETP600/610.</div>
+        </div>
+        <div class="card" onclick="toggleDesc(this)">
+            <img src="connector%20ETP%20210%20FULL.png" alt="ETP210">
+            <p style="margin-top:10px;font-weight:bold;">ETP210</p>
+            <div class="prod-desc">Lever-arm butt connector enabling tool-free, reusable inline splicing.</div>
+        </div>
+        <div class="card" onclick="toggleDesc(this)">
+            <img src="connector%20ETP%20220-FULL.png" alt="ETP220">
+            <p style="margin-top:10px;font-weight:bold;">ETP220</p>
+            <div class="prod-desc">Lever-arm wire splitter for rapid branching without crimping tools.</div>
+        </div>
+        <div class="card" onclick="toggleDesc(this)">
+            <img src="etp230.png" alt="ETP230">
+            <p style="margin-top:10px;font-weight:bold;">ETP230</p>
+            <div class="prod-desc">Lever-arm splice connector for 28–12 AWG wire, rated to 80°C.</div>
+        </div>
     </div>
 
     <div class="category-title">Hitch Mounted Brackets</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="bracket1.jpg" onerror="this.onerror=null; this.src='bracket1.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP400</p>
+            <div class="prod-desc">No-drill hitch electrical bracket for 1.25” receivers with OEM fit.</div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="bracket2.jpg" onerror="this.onerror=null; this.src='bracket2.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP410</p>
+            <div class="prod-desc">No-drill hitch electrical bracket for 2” receivers, plug not included.</div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="bracket3.jpg" onerror="this.onerror=null; this.src='bracket3.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP420</p>
+            <div class="prod-desc">11-gauge steel OEM 4- and 7-way plug bracket with low-clearance design.</div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="bracket4.jpg" onerror="this.onerror=null; this.src='bracket4.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP430</p>
+            <div class="prod-desc">Hitch-mounted 7-pin, 2” bracket for secure OEM-style connector mounting.</div>
         </div>
     </div>
 
     <div class="category-title">Junction Boxes</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="junction1.jpg" onerror="this.onerror=null; this.src='junction1.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP600</p>
+            <div class="prod-desc">Modular quick-connect trailer junction box using lever-arm terminals.</div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="junction2.jpg" onerror="this.onerror=null; this.src='junction2.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP610</p>
+            <div class="prod-desc">Quick-connect trailer junction box with cord and integrated 7-way plug.</div>
         </div>
     </div>
 
     <div class="category-title">Inline Fuse Holders</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="fuse1.jpg" onerror="this.onerror=null; this.src='fuse1.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP800</p>
+            <div class="prod-desc">Quick-connect ATC/ATM fuse holder kit with single holder included.</div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="fuse2.jpg" onerror="this.onerror=null; this.src='fuse2.png';">
             <p style="margin-top:10px;font-weight:bold;">ETP820</p>
+            <div class="prod-desc">Dual-pack quick-connect ATC/ATM fuse holders for expanded circuits.</div>
         </div>
     </div>
 
     <div class="category-title">4-Pin Plugs</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" onclick="toggleDesc(this)">
             <img src="plug1.jpg" onerror="this.onerror=null; this.src='plug1.png';">
-            <p style="margin-top:10px;font-weight:bold;">ETP300</p>
-        </div>
-        <div class="card">
-            <img src="plug2.jpg" onerror="this.onerror=null; this.src='plug2.png';">
-            <p style="margin-top:10px;font-weight:bold;">ETP310</p>
-        </div>
-    </div>
-
-    <div class="category-title">7-Pin Plugs</div>
-    <div class="grid">
-        <div class="card">
-            <img src="plug3.jpg" onerror="this.onerror=null; this.src='plug3.png';">
-            <p style="margin-top:10px;font-weight:bold;">ETP900</p>
-        </div>
-        <div class="card">
-            <img src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png';">
-            <p style="margin-top:10px;font-weight:bold;">ETP910</p>
-        </div>
-    </div>
-</div>
-
-<!-- CONTACT VIEW -->
-<div id="contact" class="page-section">
-    <h2>Contact Us</h2>
-    <div class="contact-box">
-        <p><strong>HOLLINS Manufacturing</strong></p>
-        <p>Email: <a href="mailto:info@etpmfg.com">info@etpmfg.com</a></p>
-        <p>Phone: <a href="tel:8882385332">888-238-5332</a></p>
-    </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <p>&copy; 2026 HOLLINS Manufacturing. All Rights Reserved.</p>
-</footer>
-
-<!-- INTERACTIVE NAVIGATION JAVASCRIPT -->
-<script>
-function showPage(pageId) {
-    // Hide all page sections
-    const sections = document.querySelectorAll('.page-section');
-    sections.forEach(section => {
-        section.style.display = 'none';
-    });
-
-    // Show the requested section
-    const activeSection = document.getElementById(pageId);
-    if (activeSection) {
-        activeSection.style.display = 'block';
-    }
-
-    // Manage active states on nav headers
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-
-    const activeLink = document.getElementById('nav-' + pageId);
-    if (activeLink) {
-        activeLink.classList.add('active');
-    }
-    
-    // Smooth scroll to top when changing views
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}
-</script>
-
-</body>
-</html>
