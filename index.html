@@ -6,32 +6,30 @@
     <title>HOLLINS Expert Towing Products | Strip & Clip</title>
     <style>
         :root {
-            --primary: #005A5B; /* Deep Dark Teal */
-            --dark: #121212;    /* Sleek Black */
+            --primary: #5cb85c; /* Your exact Hollins Leaf Green */
+            --dark: #1b1b1b;    /* Rugged Dark Grey/Black */
             --light: #f4f6f5;   /* Clean light gray background */
-            --white: #ffffff;   /* Pure White */
+            --white: #ffffff;   
         }
         body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; background-color: var(--white); }
         
-        /* Deep Teal Header with White Text */
-        header { background: var(--primary); color: var(--white); padding: 2rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--dark); }
-        .logo-container { margin-bottom: 1rem; width: 100%; display: flex; justify-content: center; }
-        .logo-img { max-width: 300px; height: auto; max-height: 100px; object-fit: contain; }
+        /* Dark Header to make your Green and White pop beautifully */
+        header { background: var(--dark); color: var(--white); padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--primary); }
         
-        header nav style { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
-        header nav a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.1rem; opacity: 0.9; transition: opacity 0.2s; }
-        header nav a:hover { opacity: 1; text-decoration: underline; }
+        header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1.8rem; }
+        header nav a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 1.1rem; opacity: 0.9; transition: opacity 0.2s; }
+        header nav a:hover { opacity: 1; color: var(--primary); }
 
         /* Hero Section */
-        .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('hero-bg.jpg') center/cover var(--dark); color: var(--white); padding: 6rem 2rem; text-align: center; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('hero-bg.jpg') center/cover #1b1b1b; color: var(--white); padding: 6rem 2rem; text-align: center; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
         .badge { background: var(--primary); color: var(--white); padding: 0.3rem 0.8rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         
-        /* Buttons styled in Dark Teal & White */
+        /* Buttons using your exact Leaf Green */
         .btn { display: inline-block; background: var(--primary); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: 2px solid var(--primary); cursor: pointer; transition: transform 0.2s, background-color 0.2s; font-size: 1rem; }
-        .btn:hover { transform: scale(1.03); background-color: #004445; border-color: #004445; }
+        .btn:hover { transform: scale(1.03); background-color: #4cae4c; border-color: #4cae4c; }
         .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
-        .btn-secondary:hover { background: var(--white); color: var(--primary); }
+        .btn-secondary:hover { background: var(--white); color: var(--dark); }
         
         .section { padding: 5rem 2rem; }
         .bg-light { background: var(--light); }
@@ -48,16 +46,15 @@
 </head>
 <body>
 
-    <!-- Header Navigation with Teal Background and Logo Slot -->
+    <!-- Header Navigation -->
     <header>
-        <div class="logo-container">
-            <!-- This looks for your uploaded logo.png file. If it hasn't been uploaded yet, it falls back to clean white text. -->
-            <img class="logo-img" src="logo.png" alt="HOLLINS Expert Towing Products" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-            <div style="display:none; font-weight: 900; font-size: 4.5rem; letter-spacing: 3px; color: var(--white); line-height: 1;">HOLLINS</div>
+        <div style="width: 100%; line-height: 1.0;">
+            <!-- Clean representation matching your logo layout exactly once -->
+            <div style="font-weight: 800; font-size: 5.5rem; letter-spacing: 2px; color: var(--primary);">HOLLINS</div>
+            <div style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; color: var(--white); margin-top: 0.7rem; font-weight: 500;">Expert Towing Products</div>
         </div>
-        <div style="font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; color: var(--white); margin-top: -0.2rem; font-weight: 600; opacity: 0.85; margin-bottom: 1rem;">Expert Towing Products</div>
         
-        <nav style="width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+        <nav>
             <a href="#about">Our Story</a>
             <a href="#products">Products</a>
             <a href="#contact">Contact Us</a>
@@ -97,32 +94,27 @@
         </div>
         <div class="grid">
             <div class="card">
-                <img class="product-img" src="connectors.jpg" alt="Electrical Connectors" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Electrical Connectors ]</div>
+                <div class="product-img">[ Photo: Electrical Connectors ]</div>
                 <h3>Electrical Connectors</h3>
                 <p>Equipped with seamless quick-connect mechanisms.</p>
             </div>
             <div class="card">
-                <img class="product-img" src="plugs.jpg" alt="Trailer & Vehicle Plugs" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Trailer Plugs ]</div>
+                <div class="product-img">[ Photo: Trailer Plugs ]</div>
                 <h3>Trailer & Vehicle Plugs</h3>
                 <p>Heavy-duty weather-sealed towing plugs.</p>
             </div>
             <div class="card">
-                <img class="product-img" src="junction-box.jpg" alt="Trailer Junction Box" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Junction Box ]</div>
+                <div class="product-img">[ Photo: Junction Box ]</div>
                 <h3>Trailer Junction Boxes</h3>
                 <p>Organized, secure distribution for trailer wiring.</p>
             </div>
             <div class="card">
-                <img class="product-img" src="fuse-holders.jpg" alt="Inline Fuse Holders" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Fuse Holders ]</div>
+                <div class="product-img">[ Photo: Fuse Holders ]</div>
                 <h3>Inline Fuse Holders</h3>
                 <p>Crucial circuit protection without tricky splice tools.</p>
             </div>
             <div class="card">
-                <img class="product-img" src="brackets.jpg" alt="Trailer Hitch Brackets" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="product-img" style="display:none;">[ Photo: Hitch Brackets ]</div>
+                <div class="product-img">[ Photo: Hitch Brackets ]</div>
                 <h3>Trailer Hitch Brackets</h3>
                 <p>Rugged structural mounting brackets built to endure.</p>
             </div>
@@ -138,3 +130,32 @@
         <div class="contact-container">
             <div>
                 <h3 style="margin-top: 0;">Get in Touch</h3>
+                <p style="font-size: 1.15rem; margin-bottom: 1rem;"><strong>📞 Phone:</strong> 888-238-5332</p>
+                <p style="font-size: 1.15rem;"><strong>✉️ Email:</strong> info@etpmfg.com</p>
+            </div>
+            <div>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width:100%; margin: 0;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light text-center" style="padding: 2rem; font-size: 0.9rem; border-top: 1px solid #eee; color: #777;">
+        <p>&copy; 2026 HOLLINS. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
