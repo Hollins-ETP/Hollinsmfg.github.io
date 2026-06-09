@@ -220,7 +220,8 @@ footer {
 <!-- HEADER -->
 <header>
     <div class="logo-container" onclick="showPage('home')">
-        <img src="logo.png" alt="HOLLINS Manufacturing" class="logo-img">
+        <!-- Removed the alternate text to hide the faded browser placeholder -->
+        <img src="logo.png" alt="" class="logo-img">
         <span class="logo-subtitle">Expert Towing Products</span>
     </div>
 
@@ -382,7 +383,3 @@ function showPage(pageId) {
     }
     
     // Smooth scroll to top when changing views
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}
-</script>
-
