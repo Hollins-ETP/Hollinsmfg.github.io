@@ -7,10 +7,21 @@
 <title>HOLLINS Manufacturing</title>
 
 <style>
+
+/* FULL RESET (THIS FIXES YOUR DOT ISSUE) */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+*::before,
+*::after{
+    content:none !important;
+}
+
+ul, li{
+    list-style:none;
 }
 
 :root{
@@ -61,11 +72,25 @@ nav a:hover{
     color:var(--green);
 }
 
-/* HERO */
+/* HERO (IMPROVED CONTENT STYLE) */
 .hero{
     background:var(--gray);
     text-align:center;
-    padding:80px 20px;
+    padding:90px 20px;
+}
+
+.hero h2{
+    font-size:2rem;
+    color:#111;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.1rem;
+    color:#444;
+    max-width:800px;
+    margin:0 auto 20px auto;
+    line-height:1.6;
 }
 
 .btn{
@@ -73,12 +98,11 @@ nav a:hover{
     background:var(--green);
     color:white;
     padding:12px 25px;
-    margin-top:20px;
     border-radius:6px;
     text-decoration:none;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section{
     padding:80px 20px;
     text-align:center;
@@ -147,13 +171,18 @@ nav a:hover{
 
 </header>
 
-<!-- HERO -->
+<!-- HERO (NOW MUCH STRONGER) -->
 
 <section class="hero">
-    <h2>Engineered towing & trailer electrical solutions built for speed, strength, and reliability.</h2>
-    <p>Professional quick-connect systems designed for installers, fleets, and heavy-duty applications.</p>
 
 ```
+<h2>Built for Installers Who Need Speed, Strength & Reliability</h2>
+
+<p>
+    Professional towing electrical and mounting solutions engineered to eliminate wasted time,
+    reduce installation steps, and withstand real-world commercial use.
+</p>
+
 <a class="btn" href="#products">View Products</a>
 ```
 
