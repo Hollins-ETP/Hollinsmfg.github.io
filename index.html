@@ -6,52 +6,52 @@
     <title>HOLLINS Expert Towing Products | Strip & Clip</title>
     <style>
         :root {
-            --hollins-green: #5cb85c;  /* Your exact brand Leaf Green */
+            --hollins-green: #32ab45;  /* Your exact bright brand green */
             --strip-orange: #F16E22;   /* Your exact Strip 'N Clip Orange */
-            --dark: #1b1b1b;           /* Rugged Dark Grey/Black */
-            --light: #f4f6f5;          /* Clean light gray background */
+            --dark-bg: #121212;        /* Premium dark background that matches your layout choice */
+            --light-gray: #f4f6f5;     
             --white: #ffffff;   
         }
-        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; background-color: var(--white); }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #222; line-height: 1.6; background-color: var(--white); }
         
-        /* Premium Header built in dark slate to highlight your crisp logo colors */
-        header { background: var(--dark); color: var(--white); padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 5px solid var(--hollins-green); }
+        /* Premium Header built to highlight your clean logo colors */
+        header { background: var(--dark-bg); color: var(--white); padding: 3.5rem 2rem 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
         
-        /* Custom CSS Layout built to draw your unique split-H logo lettering from scratch */
-        .brand-logo-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .hollins-logo-text { font-family: 'Arial Black', Impact, sans-serif; font-size: 5.2rem; font-weight: 900; color: var(--hollins-green); display: flex; align-items: center; letter-spacing: -1px; line-height: 1; }
+        /* Specialized layout drawing your exact rounded logo text style from scratch */
+        .logo-branding-group { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
         
-        /* Code that perfectly slices the horizontal bar of your special H character */
-        .special-h { position: relative; display: inline-block; margin-right: 2px; }
-        .special-h::after { content: ""; position: absolute; left: 22%; top: 43%; width: 56%; height: 14%; background-color: var(--dark); z-index: 10; }
+        .hollins-main-title { font-family: system-ui, -apple-system, sans-serif; font-size: 5.2rem; font-weight: 800; color: var(--hollins-green); display: flex; align-items: center; letter-spacing: -0.5px; line-height: 0.95; }
+        
+        /* Custom layout properties carving your unique split-crossbar H shape */
+        .logo-custom-h { position: relative; display: inline-block; padding-right: 1px; }
+        .logo-custom-h::after { content: ""; position: absolute; left: 24%; top: 43%; width: 52%; height: 14%; background-color: var(--dark-bg); z-index: 10; }
 
-        /* Crisp, clear subtitle properties eliminating any blurriness */
-        .logo-subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 5px; color: var(--white); font-weight: 700; margin-top: 0.8rem; -webkit-font-smoothing: antialiased; }
+        /* Crisp, clear pure white subtitle text centered below the green title */
+        .logo-sub-text { font-family: system-ui, -apple-system, sans-serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 4px; color: var(--white); font-weight: 700; margin-top: 1rem; -webkit-font-smoothing: antialiased; }
 
         header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 2.2rem; }
-        header nav a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.1rem; opacity: 0.9; transition: opacity 0.2s; }
+        header nav a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.1rem; opacity: 0.85; transition: opacity 0.2s; }
         header nav a:hover { opacity: 1; color: var(--hollins-green); }
 
-        /* Hero Layout rules */
-        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('hero-bg.jpg') center/cover #1b1b1b; color: var(--white); padding: 6rem 2rem; text-align: center; }
+        /* Hero Setup */
+        .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('hero-bg.jpg') center/cover var(--dark-bg); color: var(--white); padding: 6rem 2rem; text-align: center; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
         
         /* High-visibility orange limited exclusively to the Strip 'N Clip technology badge */
         .badge { background: var(--strip-orange); color: var(--white); padding: 0.4rem 1rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         
-        /* Every single site button is restricted to your true green style profile */
+        /* Main action items and button states using clean Hollins Green */
         .btn { display: inline-block; background: var(--hollins-green); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: 2px solid var(--hollins-green); cursor: pointer; transition: transform 0.2s, background-color 0.2s; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .btn:hover { transform: scale(1.03); background-color: #4cae4c; border-color: #4cae4c; }
+        .btn:hover { transform: scale(1.03); background-color: #2a913a; border-color: #2a913a; }
         .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
-        .btn-secondary:hover { background: var(--white); color: var(--dark); }
+        .btn-secondary:hover { background: var(--white); color: var(--dark-bg); }
         
         .section { padding: 5rem 2rem; }
-        .bg-light { background: var(--light); }
+        .bg-light { background: var(--light-gray); }
         .text-center { text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .card { background: var(--white); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e0e0e0; }
         
-        /* Product photo box properties */
         .product-img { width: 100%; height: 210px; object-fit: contain; border-radius: 4px; margin-bottom: 1rem; }
         .fallback-box { width: 100%; height: 210px; background: #ddd; border-radius: 4px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold; }
         
@@ -63,13 +63,13 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section drawing your logo digitally -->
+    <!-- Header Navigation Section -->
     <header>
-        <div class="brand-logo-wrapper">
-            <div class="hollins-logo-text">
-                <span class="special-h">H</span>OLLINS
+        <div class="logo-branding-group">
+            <div class="hollins-main-title">
+                <span class="logo-custom-h">H</span>OLLINS
             </div>
-            <div class="logo-subtitle">Expert Towing Products</div>
+            <div class="logo-sub-text">Expert Towing Products</div>
         </div>
         
         <nav>
@@ -93,7 +93,7 @@
     <!-- Brand Story Section -->
     <section id="about" class="section">
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 2.2rem; color: var(--dark); margin-bottom: 0.5rem; text-transform: uppercase;">OUR BRAND STORY</h2>
+            <h2 style="font-size: 2.2rem; color: #222; margin-bottom: 0.5rem; text-transform: uppercase;">OUR BRAND STORY</h2>
             <h3 style="font-size: 1.4rem; color: var(--hollins-green); font-weight: 600; margin-bottom: 1.5rem;">Making it Easier to Connect with What Drives You.</h3>
             <p style="font-size: 1.15rem; color: #444; line-height: 1.8; margin-bottom: 1rem;">
                 For over 20 years, we installed electrical systems, catering to diverse towing and automotive applications. Experiencing challenges again and again, we knew there had to be a better way. With the installer in mind, we've fused ingenuity, innovation, and good old-fashioned common sense into every product we offer.
