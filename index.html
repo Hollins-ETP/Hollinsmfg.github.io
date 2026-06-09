@@ -8,28 +8,20 @@
         :root {
             --hollins-green: #32ab45;  /* Your exact bright brand green */
             --strip-orange: #F16E22;   /* Your exact Strip 'N Clip Orange */
-            --dark-bg: #121212;        /* Premium dark background that matches your layout choice */
+            --dark-bg: #121212;        /* Premium dark background matching your logo backdrop */
             --light-gray: #f4f6f5;     
             --white: #ffffff;   
         }
-        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #222; line-height: 1.6; background-color: var(--white); }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #222; line-height: 1.6; background-color: var(--white); scroll-behavior: smooth; }
         
-        /* Premium Header built to highlight your clean logo colors */
-        header { background: var(--dark-bg); color: var(--white); padding: 3.5rem 2rem 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
+        /* Premium Header built to display your real logo crop beautifully */
+        header { background: var(--dark-bg); color: var(--white); padding: 3rem 2rem 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 4px solid var(--hollins-green); }
         
-        /* Specialized layout drawing your exact rounded logo text style from scratch */
-        .logo-branding-group { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        
-        .hollins-main-title { font-family: system-ui, -apple-system, sans-serif; font-size: 5.2rem; font-weight: 800; color: var(--hollins-green); display: flex; align-items: center; letter-spacing: -0.5px; line-height: 0.95; }
-        
-        /* Custom layout properties carving your unique split-crossbar H shape */
-        .logo-custom-h { position: relative; display: inline-block; padding-right: 1px; }
-        .logo-custom-h::after { content: ""; position: absolute; left: 24%; top: 43%; width: 52%; height: 14%; background-color: var(--dark-bg); z-index: 10; }
+        /* Clean image box matching your square logo dimensions */
+        .logo-image-box { max-width: 400px; width: 90%; margin: 0 auto; display: flex; justify-content: center; }
+        .logo-image-box img { width: 100%; height: auto; max-height: 120px; object-fit: contain; }
 
-        /* Crisp, clear pure white subtitle text centered below the green title */
-        .logo-sub-text { font-family: system-ui, -apple-system, sans-serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 4px; color: var(--white); font-weight: 700; margin-top: 1rem; -webkit-font-smoothing: antialiased; }
-
-        header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 2.2rem; }
+        header nav { width: 100%; display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; }
         header nav a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 1.1rem; opacity: 0.85; transition: opacity 0.2s; }
         header nav a:hover { opacity: 1; color: var(--hollins-green); }
 
@@ -37,10 +29,10 @@
         .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('hero-bg.jpg') center/cover var(--dark-bg); color: var(--white); padding: 6rem 2rem; text-align: center; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
         
-        /* High-visibility orange limited exclusively to the Strip 'N Clip technology badge */
+        /* High-visibility orange badge */
         .badge { background: var(--strip-orange); color: var(--white); padding: 0.4rem 1rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         
-        /* Main action items and button states using clean Hollins Green */
+        /* Green brand action items */
         .btn { display: inline-block; background: var(--hollins-green); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 0.5rem; border: 2px solid var(--hollins-green); cursor: pointer; transition: transform 0.2s, background-color 0.2s; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
         .btn:hover { transform: scale(1.03); background-color: #2a913a; border-color: #2a913a; }
         .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
@@ -63,13 +55,17 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section -->
+    <!-- Header Navigation Section loading your true graphic layout -->
     <header>
-        <div class="logo-branding-group">
-            <div class="hollins-main-title">
-                <span class="logo-custom-h">H</span>OLLINS
+        <div class="logo-image-box">
+            <!-- This reads the logo file you upload to your project folder -->
+            <img src="logo.png" alt="HOLLINS Expert Towing Products" onerror="this.style.display='none'; document.getElementById('fb-text').style.display='block'">
+            
+            <!-- Clean text safety backup if the picture file is missing -->
+            <div id="fb-text" style="display: none; width: 100%; line-height: 1.1;">
+                <div style="font-weight: 800; font-size: 5.5rem; letter-spacing: 2px; color: var(--hollins-green);">HOLLINS</div>
+                <div style="font-size: 1.3rem; text-transform: uppercase; letter-spacing: 4px; color: var(--white); font-weight: 700; margin-top: 0.5rem;">Expert Towing Products</div>
             </div>
-            <div class="logo-sub-text">Expert Towing Products</div>
         </div>
         
         <nav>
@@ -133,3 +129,6 @@
                 <img class="product-img" src="fuse-holders.png" alt="Inline Fuse Holders" onerror="this.onerror=null; this.src='fuse-holders.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('fb4').style.display='flex';}">
                 <div class="fallback-box" id="fb4">[ Photo: Fuse Holders ]</div>
                 <h3>Inline Fuse Holders</h3>
+                <p>Crucial circuit protection without tricky splice tools.</p>
+            </div>
+            <div class="card">
