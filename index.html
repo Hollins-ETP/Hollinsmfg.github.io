@@ -21,6 +21,7 @@ ul, li{
     --green:#2fb34a;
     --black:#0f0f0f;
     --gray:#f4f4f4;
+    --orange:#ff6600; /* Added brand orange color */
 }
 
 body{
@@ -81,6 +82,12 @@ nav a:hover, nav a.active{
     color:#444;
     line-height:1.6;
     font-size:1.1rem;
+}
+
+/* Highlight style for the feature text */
+.highlight-orange {
+    color: var(--orange);
+    font-weight: bold;
 }
 
 .btn{
@@ -194,7 +201,6 @@ footer {
 
 <!-- HEADER -->
 <header>
-    <!-- Logo replaces the old text layout -->
     <img src="logo.png" alt="HOLLINS Manufacturing" class="logo-img" onclick="showPage('home')">
 
     <nav>
@@ -211,7 +217,7 @@ footer {
         <p style="margin-bottom:15px;">
             Professional-grade towing products designed for installers, fleets, and heavy-duty use.
         </p>
-        <p>Featuring our signature <strong>Strip 'N Clip</strong> quick-connect engineering—slashing installation times to a fraction of traditional competitors.</p>
+        <p>Featuring our signature <strong class="highlight-orange">Strip 'N Clip</strong> quick-connect engineering—slashing installation times to a fraction of traditional competitors.</p>
         <a class="btn" onclick="showPage('products')">View Products</a>
     </section>
 </div>
@@ -318,7 +324,7 @@ footer {
     <h2>Contact Us</h2>
     <div class="contact-box">
         <p><strong>HOLLINS Manufacturing</strong></p>
-        <p>Email: <a href="mailto:info@hollinsmanufacturing.com">info@hollinsmanufacturing.com</a></p>
+        <p>Email: <a href="mailto:info@etpmfg.com">info@etpmfg.com</a></p>
         <p>Phone: (555) 123-4567</p>
     </div>
 </div>
