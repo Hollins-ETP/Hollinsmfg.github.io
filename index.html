@@ -125,10 +125,6 @@ nav a:hover, nav a.active{
     text-align: center;
 }
 
-#home.page-section {
-    display: block;
-}
-
 .page-section h2{
     color:var(--green);
     margin-bottom:20px;
@@ -220,7 +216,6 @@ footer {
 <!-- HEADER -->
 <header>
     <div class="logo-container" onclick="showPage('home')">
-        <!-- Removed the alternate text to hide the faded browser placeholder -->
         <img src="logo.png" alt="" class="logo-img">
         <span class="logo-subtitle">Expert Towing Products</span>
     </div>
@@ -359,19 +354,16 @@ footer {
 <!-- INTERACTIVE NAVIGATION JAVASCRIPT -->
 <script>
 function showPage(pageId) {
-    // Hide all page sections
     const sections = document.querySelectorAll('.page-section');
     sections.forEach(section => {
         section.style.display = 'none';
     });
 
-    // Show the requested section
     const activeSection = document.getElementById(pageId);
     if (activeSection) {
         activeSection.style.display = 'block';
     }
 
-    // Manage active states on nav headers
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.classList.remove('active');
@@ -382,4 +374,14 @@ function showPage(pageId) {
         activeLink.classList.add('active');
     }
     
-    // Smooth scroll to top when changing views
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// CRITICAL FIX: Automatically load the home page context immediately when the browser boots up
+document.addEventListener("DOMContentLoaded", function() {
+    showPage('home');
+});
+</script>
+
+</body>
+</html>
