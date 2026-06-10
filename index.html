@@ -80,25 +80,29 @@ nav a:hover, nav a.active{
     color:var(--green);
 }
 
-/* HERO / HOME DEFAULT */
+/* HERO / HOME DEFAULT WITH BACKDROP */
 .hero{
-    background:var(--gray);
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('scenic-bg.jpg') no-repeat center center/cover;
     text-align:center;
-    padding:90px 20px;
+    padding:140px 20px; 
+    border-radius: 4px;
 }
 
 .hero h2{
-    font-size:2rem;
-    color:#111;
-    margin-bottom:15px;
+    font-size:2.4rem;
+    color:#fff; 
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .hero p{
     max-width:800px;
     margin:auto;
-    color:#444;
+    color:#eee; 
     line-height:1.6;
-    font-size:1.1rem;
+    font-size:1.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 /* Highlight style for the feature text */
@@ -111,14 +115,20 @@ nav a:hover, nav a.active{
     display:inline-block;
     background:var(--green);
     color:white;
-    padding:12px 25px;
-    margin-top:20px;
+    padding:14px 30px;
+    margin-top:25px;
     border-radius:6px;
     text-decoration:none;
     cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-/* SECTIONS */
+.btn:hover {
+    background: #259e3f;
+}
+
+/* SECTIONS BASE LAYOUT */
 .page-section{
     display: none;
     padding: 90px 20px;
@@ -127,42 +137,92 @@ nav a:hover, nav a.active{
 
 #home.page-section {
     display: block;
+    padding: 20px; 
 }
 
 .page-section h2{
-    color:var(--green);
     margin-bottom:20px;
 }
 
-/* STORY */
-.container{
-    max-width:900px;
-    margin:auto;
-    line-height:1.8;
-    color:#444;
+/* 💻 MODERN LAYOUT DESIGN INJECTED BELOW THE HEADER */
+
+/* 1. OUR STORY VIEW: Rich Dark Slate Shading Accent */
+#story.page-section {
+    background: linear-gradient(145deg, #1a222d 0%, #0b0f14 100%);
+    padding: 120px 20px;
 }
 
-/* PRODUCTS */
+#story.page-section h2 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:#e2e8f0; 
+    background: rgba(255, 255, 255, 0.03);
+    padding: 45px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* 2. PRODUCT CATALOG VIEW: Engineering Blueprint Dot-Grid */
+#products.page-section {
+    background-color: #f8fafc;
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 24px 24px;
+    padding: 90px 20px;
+}
+
+#products.page-section h2 {
+    color: #0f172a;
+    font-weight: 800;
+}
+
+/* 3. CONTACT US VIEW: Soft Tech Blue-Gray Slate Backdrop */
+#contact.page-section {
+    background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
+    padding: 120px 20px;
+}
+
+#contact.page-section h2 {
+    color: #0f172a;
+}
+
+/* PRODUCTS DISPLAY CONFIGURATION */
 .category-title{
     margin-top:60px;
     font-size:1.4rem;
-    color:#222;
+    color:#1e293b;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-top:20px;
+    gap:25px;
+    margin-top:24px;
     max-width:1100px;
     margin:auto;
 }
 
 .card{
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:10px;
+    border: 1px solid #e2e8f0;
+    border-radius:12px;
+    padding:20px;
     background:white;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08);
 }
 
 .card img{
@@ -171,21 +231,26 @@ nav a:hover, nav a.active{
     object-fit:contain;
 }
 
-/* CONTACT CONTAINER BOX */
+.card p {
+    color: #0f172a;
+}
+
+/* CONTACT BOX DESIGN */
 .contact-box {
-    background: var(--gray);
-    padding: 40px;
-    border-radius: 10px;
+    background: white;
+    padding: 45px;
+    border-radius: 12px;
     display: inline-block;
     text-align: left;
-    min-width: 320px;
-    border: 1px solid #ddd;
+    min-width: 350px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .contact-box p {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    color: #333;
+    color: #334155;
 }
 
 .contact-box p:last-child {
@@ -207,11 +272,11 @@ footer {
     background: var(--black);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     font-size: 0.85rem;
-    opacity: 0.8;
+    opacity: 0.9;
+    border-top: 1px solid #222;
 }
-
 </style>
 </head>
 
@@ -220,7 +285,6 @@ footer {
 <!-- HEADER -->
 <header>
     <div class="logo-container" onclick="showPage('home')">
-        <!-- Removed the alternate text to hide the faded browser placeholder -->
         <img src="logo.png" alt="" class="logo-img">
         <span class="logo-subtitle">Expert Towing Products</span>
     </div>
@@ -232,7 +296,7 @@ footer {
     </nav>
 </header>
 
-<!-- HOME / HERO LANDING PAGE VIEW -->
+<!-- HOME / HERO LANDING PAGE VIEW WITH THE RENDERED 5TH-WHEEL SCENE -->
 <div id="home" class="page-section">
     <section class="hero">
         <h2>Engineered towing & trailer electrical solutions built for speed, strength, and reliability.</h2>
@@ -244,7 +308,7 @@ footer {
     </section>
 </div>
 
-<!-- STORY VIEW -->
+<!-- STORY VIEW WITH THE MODERN DARK Industrial BACKGROUND -->
 <div id="story" class="page-section">
     <h2>Our Brand Story</h2>
     <div class="container">
@@ -260,7 +324,7 @@ footer {
     </div>
 </div>
 
-<!-- PRODUCTS VIEW -->
+<!-- PRODUCTS VIEW WITH THE CLEAN TECHNICAL GRID BACKGROUND -->
 <div id="products" class="page-section">
     <h2>Products</h2>
 
@@ -323,63 +387,3 @@ footer {
             <p style="margin-top:10px;font-weight:bold;">ETP300</p>
         </div>
         <div class="card">
-            <img src="plug2.jpg" onerror="this.onerror=null; this.src='plug2.png';">
-            <p style="margin-top:10px;font-weight:bold;">ETP310</p>
-        </div>
-    </div>
-
-    <div class="category-title">7-Pin Plugs</div>
-    <div class="grid">
-        <div class="card">
-            <img src="plug3.jpg" onerror="this.onerror=null; this.src='plug3.png';">
-            <p style="margin-top:10px;font-weight:bold;">ETP900</p>
-        </div>
-        <div class="card">
-            <img src="plug4.jpg" onerror="this.onerror=null; this.src='plug4.png';">
-            <p style="margin-top:10px;font-weight:bold;">ETP910</p>
-        </div>
-    </div>
-</div>
-
-<!-- CONTACT VIEW -->
-<div id="contact" class="page-section">
-    <h2>Contact Us</h2>
-    <div class="contact-box">
-        <p><strong>HOLLINS Manufacturing</strong></p>
-        <p>Email: <a href="mailto:info@etpmfg.com">info@etpmfg.com</a></p>
-        <p>Phone: <a href="tel:8882385332">888-238-5332</a></p>
-    </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <p>&copy; 2026 HOLLINS Manufacturing. All Rights Reserved.</p>
-</footer>
-
-<!-- INTERACTIVE NAVIGATION JAVASCRIPT -->
-<script>
-function showPage(pageId) {
-    // Hide all page sections
-    const sections = document.querySelectorAll('.page-section');
-    sections.forEach(section => {
-        section.style.display = 'none';
-    });
-
-    // Show the requested section
-    const activeSection = document.getElementById(pageId);
-    if (activeSection) {
-        activeSection.style.display = 'block';
-    }
-
-    // Manage active states on nav headers
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-
-    const activeLink = document.getElementById('nav-' + pageId);
-    if (activeLink) {
-        activeLink.classList.add('active');
-    }
-    
-    // Smooth scroll to top when changing views
